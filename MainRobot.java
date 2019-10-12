@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 import com.pi4j.io.gpio.GpioController;
@@ -10,10 +11,7 @@ import com.pi4j.io.gpio.RaspiPin;
 
 
 public class MainRobot{ 
-  private static void createWindow(){
-    JFrame frame = new JFrame("Bartending Robot"); 
-    JButton b = new JButton("Press");
-
+  private static void createWindow(JFrame frame, JButton b){
     b.setBounds(100, 100, 140, 40);
     frame.add(b); 
     frame.setSize(300, 400);
@@ -23,15 +21,25 @@ public class MainRobot{
   }
 
   public static void main(String[] args) throws InterruptedException{
+    JFrame frame = new JFrame("Bartending Robot");
+    JButton b = new JButton("Press");
 
     final GpioController gpio = GpioFactory.getInstance();
     final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_12, "MyLed", PinState.HIGH);
 
+
+  
     //pin.setShutdownOptions(true, PinState.LOW);
 
     Thread.sleep(5000);
 
-    gpio.shutdown();
-    createWindow();
+    b.addActionListener(new ActionListener()
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+          pin.toggle();
+        }
+    });
+    createWindow(frame, b);
   }
 }
