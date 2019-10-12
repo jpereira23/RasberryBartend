@@ -33,15 +33,15 @@ public class MainRobot{
 
     Thread.sleep(5000);
 
-    pin.toggle();
+    pin.low();
 
     Thread.sleep(5000);
 
-    pin.toggle();
+    pin.high();
 
     Thread.sleep(5000);
 
-    pin.toggle();
+    pin.low();
     /*
     b.addActionListener(new ActionListener()
     {
