@@ -1,11 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
 
-
-import com.pi4j.io.serial.*;
-import com.pi4j.util.CommandArgumentParser;
-import com.pi4j.util.Console;
-import java.io.IOException;
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinState;
+import com.pi4j.io.gpio.RaspiPin;
 
 
 
@@ -22,33 +22,16 @@ public class MainRobot{
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 
-  public static void main(String[] args){
-    final Console console = new Console();
-    console.title("<--- Robot testing --->");
-    console.promptForExit();
-    final Serial serial = SerialFactory.createInstance();
+  public static void main(String[] args) throws InterruptedException{
 
-    serial.addListener(new SerialDataEventListener() {
-      @Override
-      public void dataReceived(SerialDataEvent event){
-        try{
-          console.println("[HEX DATA]  " + event.getHexByteString());
-	      } catch (IOException e) {
-	      e.printStackTrace();
-	      }
-      }
-    });
+    final GpioController gpio = GpioFactory.getInstance();
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "MyLed", PinState.HIGH);
 
-    /*
-    try{
-      SerialConfig config = new SerialConfig();
-      config.device(SerialPort.getDefaultPort()).baud(Baud._38400).dataBits(DataBits._8).parity(Parity.NONE).stopBits(StopBits._1).flowControl(FlowControl.NONE);
-      
-      serial.open(config);
-    } catch(IOException ex){
-      ex.printStackTrace();
-    }
-    */
+    pin.setShutdownOptions(true, PinState.LOW);
+
+    Thread.sleep(5000);
+
+    gpio.shutdown();
     createWindow();
   }
 }
