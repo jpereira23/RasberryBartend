@@ -33,13 +33,25 @@ public class MainRobot{
 
     Thread.sleep(5000);
 
+    pin.toggle();
+
+    Thread.sleep(5000);
+
+    pin.toggle();
+
+    Thread.sleep(5000);
+
+    pin.toggle();
+    /*
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
         {
+          System.out.println("Hello World");
           pin.toggle();
         }
     });
+    */
     createWindow(frame, b);
   }
 }
