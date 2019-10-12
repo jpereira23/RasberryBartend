@@ -25,7 +25,7 @@ public class MainRobot{
     JButton b = new JButton("Press");
 
     final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.HIGH);
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "MyLed", PinState.HIGH);
 
 
     System.out.println("Hello World");
