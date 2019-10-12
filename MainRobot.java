@@ -25,7 +25,7 @@ public class MainRobot{
   public static void main(String[] args) throws InterruptedException{
 
     final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "MyLed", PinState.HIGH);
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_12, "MyLed", PinState.HIGH);
 
     pin.setShutdownOptions(true, PinState.LOW);
 
