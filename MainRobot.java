@@ -25,10 +25,9 @@ public class MainRobot{
     JButton b = new JButton("Press");
 
     final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "MyLed", PinState.HIGH);
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "MyLed", PinState.HIGH);
 
 
-    System.out.println("Hello World");
   
     pin.setShutdownOptions(true, PinState.LOW);
 
@@ -37,7 +36,6 @@ public class MainRobot{
     {
         public void actionPerformed(ActionEvent e)
         {
-          System.out.println("Hello World");
           pin.toggle();
         }
     });
