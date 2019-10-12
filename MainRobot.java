@@ -39,6 +39,7 @@ public class MainRobot{
       }
     });
 
+    /*
     try{
       SerialConfig config = new SerialConfig();
       config.device(SerialPort.getDefaultPort()).baud(Baud._38400).dataBits(DataBits._8).parity(Parity.NONE).stopBits(StopBits._1).flowControl(FlowControl.NONE);
@@ -47,6 +48,7 @@ public class MainRobot{
     } catch(IOException ex){
       ex.printStackTrace();
     }
+    */
     createWindow();
   }
 }
