@@ -28,13 +28,11 @@ public class MainRobot{
     final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.HIGH);
 
 
-    Thread.sleep(5000);
     System.out.println("Hello World");
   
-    //pin.setShutdownOptions(true, PinState.LOW);
+    pin.setShutdownOptions(true, PinState.LOW);
 
 
-    /*
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -43,7 +41,6 @@ public class MainRobot{
           pin.toggle();
         }
     });
-    */
 
     gpio.shutdown();
     createWindow(frame, b);
