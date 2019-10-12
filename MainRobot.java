@@ -42,6 +42,8 @@ public class MainRobot{
         }
     });
     */
+
+    gpio.shutdown();
     createWindow(frame, b);
   }
 }
