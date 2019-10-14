@@ -41,7 +41,14 @@ public class MainRobot{
         }
     });
     */
-    //gpio.shutdown();
+
+    Runtime.getRuntime().addShutdownHook(new Thread()
+    {
+      public void run()
+      {
+        gpio.shutdown();
+      }
+    });
     createWindow(frame, b);
   }
 }
