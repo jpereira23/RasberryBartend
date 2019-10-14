@@ -32,7 +32,6 @@ public class MainRobot{
     pin.setShutdownOptions(true, PinState.LOW);
 
 
-   /*
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -40,7 +39,6 @@ public class MainRobot{
           pin.toggle();
         }
     });
-    */
 
     Runtime.getRuntime().addShutdownHook(new Thread()
     {
