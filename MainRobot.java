@@ -28,7 +28,7 @@ public class MainRobot{
     final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.HIGH);
 
 
-    pin.low();
+    //pin.low();
     pin.setShutdownOptions(true, PinState.LOW);
 
 
