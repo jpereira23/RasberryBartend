@@ -25,13 +25,33 @@ public class MainRobot{
     JButton b = new JButton("Press");
 
     final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "MyLed", PinState.HIGH);
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.HIGH);
 
 
   
     pin.setShutdownOptions(true, PinState.LOW);
 
 
+    Thread.sleep(5000);
+
+    pin.low();
+
+    Thread.sleep(5000);
+
+    pin.toggle();
+
+    Thread.sleep(5000);
+
+    pin.toggle();
+
+
+    Thread.sleep(5000);
+
+
+    pin.pulse(1000, true);
+
+
+    /*
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -39,7 +59,7 @@ public class MainRobot{
           pin.toggle();
         }
     });
-
+    */
     gpio.shutdown();
     createWindow(frame, b);
   }
