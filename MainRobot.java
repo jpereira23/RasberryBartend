@@ -32,26 +32,7 @@ public class MainRobot{
     pin.setShutdownOptions(true, PinState.LOW);
 
 
-    Thread.sleep(5000);
-
-    pin.low();
-
-    Thread.sleep(5000);
-
-    pin.toggle();
-
-    Thread.sleep(5000);
-
-    pin.toggle();
-
-
-    Thread.sleep(5000);
-
-
-    pin.pulse(1000, true);
-
-
-    /*
+   /*
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
