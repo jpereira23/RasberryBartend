@@ -2,18 +2,16 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.PinState;
-import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.io.gpio.event.GpioPinListenerDigital;
+import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
+import com.pi4j.io.gpio.*;
 
 // Main Robot Project
 
 public class MainRobot{ 
   private static void createWindow(JFrame frame, JButton b, JTextField t1, JTextField t2, JTextField t3, JTextField t4){
     b.setBounds(100, 100, 140, 40);
-   t1.setBounds(100, 150, 200, 30);
+    t1.setBounds(100, 150, 200, 30);
     t2.setBounds(100, 200, 200, 30);
     t3.setBounds(100, 250, 200, 30);
     t4.setBounds(100, 300, 200, 30);
@@ -41,6 +39,7 @@ public class MainRobot{
     
 
     final GpioController gpio = GpioFactory.getInstance();
+    final GpioPinDigitalInput pin10 = gpio.provisionDigitalInputPin(RaspiPin.GPIO_10, PinPullResistance.PULL_DOWN);
     final GpioPinDigitalOutput pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.LOW);
     
     final GpioPinDigitalOutput pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "MyLed", PinState.LOW);
@@ -57,6 +56,16 @@ public class MainRobot{
 
     pin6.setShutdownOptions(true, PinState.LOW);
 
+
+    pin10.addListener(new GpioPinListenerDigital(){
+      @Override
+      public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event){
+        pin1.high();  
+        pin4.high();
+        pin5.high();
+        pin6.high();
+      }
+    });
 
     b.addActionListener(new ActionListener()
     {
