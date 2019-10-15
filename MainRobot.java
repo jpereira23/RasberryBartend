@@ -11,9 +11,18 @@ import com.pi4j.io.gpio.RaspiPin;
 // Main Robot Project
 
 public class MainRobot{ 
-  private static void createWindow(JFrame frame, JButton b){
+  private static void createWindow(JFrame frame, JButton b, JTextField t1, JTextField t2, JTextField t3, JTextField t4){
     b.setBounds(100, 100, 140, 40);
+   t1.setBounds(100, 150, 200, 30);
+    t2.setBounds(100, 200, 200, 30);
+    t3.setBounds(100, 250, 200, 30);
+    t4.setBounds(100, 300, 200, 30);
+    
     frame.add(b); 
+    frame.add(t1);
+    frame.add(t2);
+    frame.add(t3);
+    frame.add(t4);
     frame.setSize(300, 400);
     frame.setLayout(null);
     frame.setVisible(true);
@@ -24,6 +33,12 @@ public class MainRobot{
     int[] intArray = new int[]{1,2,3,4};
     JFrame frame = new JFrame("Bartending Robot");
     JButton b = new JButton("Press");
+    JTextField t1, t2, t3, t4;
+    t1 = new JTextField("Pin 01");
+    t2 = new JTextField("Pin 04");
+    t3 = new JTextField("Pin 05");
+    t4 = new JTextField("Pin 06");
+    
 
     final GpioController gpio = GpioFactory.getInstance();
     final GpioPinDigitalOutput pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.LOW);
@@ -47,6 +62,15 @@ public class MainRobot{
     {
         public void actionPerformed(ActionEvent e)
         {
+
+          String s1 = t1.getText();
+          String s2 = t2.getText();
+          String s3 = t3.getText(); 
+          String s4 = t4.getText();
+          intArray[0] = Integer.parseInt(s1);
+          intArray[1] = Integer.parseInt(s2);
+          intArray[2] = Integer.parseInt(s3);
+          intArray[3] = Integer.parseInt(s4);
           for(int i=0; i<4; i++){
             pin1.low();
             pin4.low();
@@ -84,6 +108,6 @@ public class MainRobot{
         gpio.shutdown();
       }
     });
-    createWindow(frame, b);
+    createWindow(frame, b, t1, t2, t3, t4);
   }
 }
