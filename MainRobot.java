@@ -1,11 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import com.pi4j.io.gpio.event.GpioPinListenerDigital;
-import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
-import com.pi4j.io.gpio.*;
-
 // Main Robot Project
 
 public class MainRobot{ 
@@ -27,7 +22,11 @@ public class MainRobot{
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 
+  
+
   public static void main(String[] args) throws InterruptedException{
+    Robot r = new Robot();
+    /*
     int[] intArray = new int[]{1,2,3,4};
     JFrame frame = new JFrame("Bartending Robot");
     JButton b = new JButton("Press");
@@ -36,27 +35,13 @@ public class MainRobot{
     t2 = new JTextField("Pin 04");
     t3 = new JTextField("Pin 05");
     t4 = new JTextField("Pin 06");
+    */
     
 
-    final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalInput pin10 = gpio.provisionDigitalInputPin(RaspiPin.GPIO_10, PinPullResistance.PULL_DOWN);
-    final GpioPinDigitalOutput pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLed", PinState.LOW);
-    
-    final GpioPinDigitalOutput pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "MyLed", PinState.LOW);
-
-    final GpioPinDigitalOutput pin5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "MyLed", PinState.LOW);
-
-    final GpioPinDigitalOutput pin6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "MyLed", PinState.LOW);
-
-    pin1.setShutdownOptions(true, PinState.LOW);
-
-    pin4.setShutdownOptions(true, PinState.LOW);
-
-    pin5.setShutdownOptions(true, PinState.LOW);
-
-    pin6.setShutdownOptions(true, PinState.LOW);
 
 
+      
+    /*
     pin10.addListener(new GpioPinListenerDigital(){
       @Override
       public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event){
@@ -66,7 +51,7 @@ public class MainRobot{
         pin6.high();
       }
     });
-
+    
     b.addActionListener(new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -114,9 +99,12 @@ public class MainRobot{
     {
       public void run()
       {
-        gpio.shutdown();
+        r.shutdownProtocol();
       }
     });
-    createWindow(frame, b, t1, t2, t3, t4);
+
+    */
+    //createWindow(frame, b, t1, t2, t3, t4);
+    GUI g = new GUI();
   }
 }
