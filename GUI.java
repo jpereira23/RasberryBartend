@@ -13,7 +13,7 @@ public class GUI{
 
   private void setupMainWindow(){
     frame = new JFrame("Bartending Robot");
-    frame.setSize(800, 500));
+    frame.setSize(800, 500);
     frame.setLayout(null);
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
