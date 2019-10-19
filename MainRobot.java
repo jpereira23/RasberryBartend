@@ -9,7 +9,7 @@ public class MainRobot{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Robot r = new Robot();
     GUI g = new GUI();
-    
+    API a = new API();    
     g.b1.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e){
