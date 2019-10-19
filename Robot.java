@@ -26,6 +26,7 @@ public class Robot {
   private GpioPinDigitalOutput pump15;
   private GpioPinDigitalOutput pump16;
   private GpioPinDigitalInput irSensor;    
+  private GpioPinDigitalOutput[] GpioArray;
 
   public Robot(){
     gpio = GpioFactory.getInstance();
@@ -46,7 +47,8 @@ public class Robot {
     pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "My Led", PinState.HIGH);
     pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "My Led", PinState.HIGH);
     irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_17, PinPullResistance.PULL_DOWN);
-
+    
+    GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15, pump16};
 
     pump1.setShutdownOptions(true, PinState.LOW);
     pump2.setShutdownOptions(true, PinState.LOW);
@@ -65,6 +67,18 @@ public class Robot {
     pump15.setShutdownOptions(true, PinState.LOW);
     pump16.setShutdownOptions(true, PinState.LOW);
 
+  }
+
+  public void makeDrink(int[] a){
+    for(int i = 0; i < 16; i++){
+      try{
+        GpioArray[i].low();
+        Thread.sleep(a[i]*1000);
+        GpioArray[i].high();
+      } catch (InterruptedException error){
+        System.out.println("Error");
+      }
+    }
   }
 
   public void shutdownProtocol(){

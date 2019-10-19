@@ -5,107 +5,49 @@ import javax.swing.*;
 // Main Robot Project
 
 public class MainRobot{ 
-  private static void createWindow(JFrame frame, JButton b, JTextField t1, JTextField t2, JTextField t3, JTextField t4){
-    b.setBounds(100, 100, 140, 40);
-    t1.setBounds(100, 150, 200, 30);
-    t2.setBounds(100, 200, 200, 30);
-    t3.setBounds(100, 250, 200, 30);
-    t4.setBounds(100, 300, 200, 30);
-    
-    frame.add(b); 
-    frame.add(t1);
-    frame.add(t2);
-    frame.add(t3);
-    frame.add(t4);
-    frame.setSize(300, 400);
-    frame.setLayout(null);
-    frame.setVisible(true);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  }
-
-  
-
   public static void main(String[] args) throws InterruptedException{
+    int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Robot r = new Robot();
-    /*
-    int[] intArray = new int[]{1,2,3,4};
-    JFrame frame = new JFrame("Bartending Robot");
-    JButton b = new JButton("Press");
-    JTextField t1, t2, t3, t4;
-    t1 = new JTextField("Pin 01");
-    t2 = new JTextField("Pin 04");
-    t3 = new JTextField("Pin 05");
-    t4 = new JTextField("Pin 06");
-    */
-    
-
-
-
-      
-    /*
-    pin10.addListener(new GpioPinListenerDigital(){
-      @Override
-      public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event){
-        pin1.high();  
-        pin4.high();
-        pin5.high();
-        pin6.high();
-      }
-    });
-    
-    b.addActionListener(new ActionListener()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-
-          String s1 = t1.getText();
-          String s2 = t2.getText();
-          String s3 = t3.getText(); 
-          String s4 = t4.getText();
-          intArray[0] = Integer.parseInt(s1);
-          intArray[1] = Integer.parseInt(s2);
-          intArray[2] = Integer.parseInt(s3);
-          intArray[3] = Integer.parseInt(s4);
-          for(int i=0; i<4; i++){
-            pin1.low();
-            pin4.low();
-            pin5.low();
-            pin6.low();
-            switch(i){
-              case 0: 
-                pin1.high();
-                break; 
-              case 1: 
-                pin4.high();
-                break;  
-              case 2: 
-                pin5.high();
-                break;
-              case 3:
-                pin6.high();
-                break;
-              default: 
-                break;
-            } 
-            try{
-            Thread.sleep(intArray[i]*1000);
-            } catch (InterruptedException error){
-              System.out.println("Error");
-            }
-          }
-        }
-    });
-
-    Runtime.getRuntime().addShutdownHook(new Thread()
-    {
-      public void run()
-      {
-        r.shutdownProtocol();
-      }
-    });
-
-    */
-    //createWindow(frame, b, t1, t2, t3, t4);
     GUI g = new GUI();
+    
+    g.b1.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e){
+        String s1 = g.t1.getText(); 
+        String s2 = g.t2.getText(); 
+        String s3 = g.t3.getText(); 
+        String s4 = g.t4.getText(); 
+        String s5 = g.t5.getText(); 
+        String s6 = g.t6.getText(); 
+        String s7 = g.t7.getText(); 
+        String s8 = g.t8.getText(); 
+        String s9 = g.t9.getText(); 
+        String s10 = g.t10.getText(); 
+        String s11 = g.t11.getText(); 
+        String s12 = g.t12.getText(); 
+        String s13 = g.t13.getText(); 
+        String s14 = g.t14.getText(); 
+        String s15 = g.t15.getText(); 
+        String s16 = g.t16.getText(); 
+        intArray[0] = Integer.parseInt(s1);
+        intArray[1] = Integer.parseInt(s2);
+        intArray[2] = Integer.parseInt(s3);
+        intArray[3] = Integer.parseInt(s4);
+        intArray[4] = Integer.parseInt(s5);
+        intArray[5] = Integer.parseInt(s6);
+        intArray[6] = Integer.parseInt(s7);
+        intArray[7] = Integer.parseInt(s8);
+        intArray[8] = Integer.parseInt(s9);
+        intArray[9] = Integer.parseInt(s10);
+        intArray[10] = Integer.parseInt(s11);
+        intArray[11] = Integer.parseInt(s12);
+        intArray[12] = Integer.parseInt(s13);
+        intArray[13] = Integer.parseInt(s14);
+        intArray[14] = Integer.parseInt(s15);
+        intArray[15] = Integer.parseInt(s16);
+
+        r.makeDrink(intArray);
+      }
+    });
   }
 }

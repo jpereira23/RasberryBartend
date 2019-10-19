@@ -30,8 +30,12 @@ public class GUI{
     setupTextFields();
     setupButtons();
     frame.setLayout(null);
+    //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    //frame.setUndecorated(true);
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    
 
   }
 
