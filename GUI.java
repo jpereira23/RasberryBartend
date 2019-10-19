@@ -7,6 +7,11 @@ public class GUI{
   
 
   public GUI(){
+    setupMainWindow();
+  }
+
+
+  private void setupMainWindow(){
     frame = new JFrame("Bartending Robot");
     frame.setSize(800, 500));
     frame.setLayout(null);

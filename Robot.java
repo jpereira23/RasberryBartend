@@ -29,7 +29,7 @@ public class Robot {
 
   public Robot(){
     gpio = GpioFactory.getInstance();
-    pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "My Led", PinState.HIGH);
+    pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "My Led", PinState.LOW);
     pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "My Led", PinState.HIGH);
     pump3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "My Led", PinState.HIGH);
     pump4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "My Led", PinState.HIGH);
