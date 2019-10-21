@@ -17,8 +17,18 @@ public class API{
       con.setRequestMethod("GET");
       int responseCode = con.getResponseCode();
       System.out.println(responseCode);
+      con.setRequestProperty("Content-Type", "application/json");
+      BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+      String inputLine;
+      StringBuffer content = new StringBuffer(); 
+      while((inputLine = in.readLine()) != null){
+         System.out.println(inputLine);
+      }
+      in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
     }
   }
+
+  
 }
