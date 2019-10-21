@@ -12,6 +12,7 @@ public class API{
     url = "http://138.197.205.247:8080/api/drinks";
     System.out.println("Jeffs world");
     try {
+	
       obj = new URL(url);
       con = (HttpURLConnection) obj.openConnection();
       con.setRequestMethod("GET");
@@ -25,6 +26,7 @@ public class API{
          System.out.println(inputLine);
       }
       in.close();
+      con.close();
     } catch (IOException e){
       System.out.println("Hello, world");
     }
