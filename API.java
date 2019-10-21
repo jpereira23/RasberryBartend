@@ -15,9 +15,9 @@ public class API{
       con = (HttpURLConnection) obj.openConnection();
       con.setRequestMethod("GET");
       int responseCode = con.getResponseCode();
+      System.out.println(responseCode);
     } catch (IOException e){
       System.out.println("Hello, world");
     }
-    System.out.println(responseCode);
   }
 }
