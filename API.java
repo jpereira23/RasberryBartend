@@ -9,10 +9,14 @@ public class API{
   HttpURLConnection con;
   public API(){
     url = "http://138.197.205.247:8080/api/drinks";
-    obj = new URL(url);
-    con = (HttpURLConnection) obj.openConnection();
-    con.setRequestMethod("GET");
-    int responseCode = con.getResponseCode();
+    try {
+      obj = new URL(url);
+      con = (HttpURLConnection) obj.openConnection();
+      con.setRequestMethod("GET");
+      int responseCode = con.getResponseCode();
+    } catch (IOException e){
+      System.out.println("Hello, world");
+    }
     System.out.println(responseCode);
   }
 }

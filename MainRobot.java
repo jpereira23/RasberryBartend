@@ -6,7 +6,7 @@ import java.io.IOException;
 // Main Robot Project
 
 public class MainRobot{ 
-  public static void main(String[] args) throws InterruptedException, IOException{
+  public static void main(String[] args) throws InterruptedException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Robot r = new Robot();
     GUI g = new GUI();
