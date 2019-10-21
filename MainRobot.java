@@ -2,10 +2,11 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.IOException;
 // Main Robot Project
 
 public class MainRobot{ 
-  public static void main(String[] args) throws InterruptedException{
+  public static void main(String[] args) throws InterruptedException, IOException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Robot r = new Robot();
     GUI g = new GUI();
