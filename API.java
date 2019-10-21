@@ -10,6 +10,7 @@ public class API{
   HttpURLConnection con;
   public API(){
     url = "http://138.197.205.247:8080/api/drinks";
+    System.out.println("Jeffs world");
     try {
       obj = new URL(url);
       con = (HttpURLConnection) obj.openConnection();
