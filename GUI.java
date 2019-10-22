@@ -10,7 +10,7 @@ public class GUI{
   public JButton b2;
   private Drink aDrink;
 
-  //private String[][] data;
+  private String[][] data;
   public GUI(Drink d){
     setupMainWindow();
     setupButtons();
