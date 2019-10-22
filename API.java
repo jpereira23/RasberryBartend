@@ -25,7 +25,7 @@ public class API{
       System.out.println(inputLine);
       JSONObject json = new JSONObject(inputLine); 
       JSONArray arr = json.getJSONArray("message");
-      drink1 = new Drink(arr.getJSONObject(0).getString("drinkName"), arr.getJSONObject(0).getInt("slot1"), arr.getJSONObject(0).getInt("slot2"), arr.getJSONObject(0).getInt("slot3"), arr.getJSONObject(0).getInt("slot4"), arr.getJSONObject(0).getInt("slot5"), arr.getJSONObject(0).getInt("slot6"), arr.getJSONObject(0).getInt("slot7"), arr.getJSONObject(0).getInt("slot8"), arr.getJSONObject(0).getInt("slot9"), arr.getJSONObject(0).getIntt("slot10"), arr.getJSONObject(0).getInt("slot11"), arr.getJSONObject(0).getInt("slot12"), arr.getJSONObject(0).getString("slot13"), arr.getJSONObject(0).getString("slot14"), arr.getJSONObject(0).getInt("slot15"), arr.getJSONObject(0).getInt("slot16")); 
+      drink1 = new Drink(arr.getJSONObject(0).getString("drinkName"), arr.getJSONObject(0).getInt("slot1"), arr.getJSONObject(0).getInt("slot2"), arr.getJSONObject(0).getInt("slot3"), arr.getJSONObject(0).getInt("slot4"), arr.getJSONObject(0).getInt("slot5"), arr.getJSONObject(0).getInt("slot6"), arr.getJSONObject(0).getInt("slot7"), arr.getJSONObject(0).getInt("slot8"), arr.getJSONObject(0).getInt("slot9"), arr.getJSONObject(0).getInt("slot10"), arr.getJSONObject(0).getInt("slot11"), arr.getJSONObject(0).getInt("slot12"), arr.getJSONObject(0).getString("slot13"), arr.getJSONObject(0).getString("slot14"), arr.getJSONObject(0).getInt("slot15"), arr.getJSONObject(0).getInt("slot16")); 
       in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
