@@ -8,8 +8,8 @@ public class GUI{
  
   public JButton b1; 
   public JButton b2;
-  private Drink aDrink;
-
+  private Drink aDrink; 
+  String[][] aD;
   public GUI(Drink d){
     setupMainWindow();
     setupButtons();
