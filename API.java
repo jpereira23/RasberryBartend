@@ -4,9 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.IOException;
 
-interface APIDelegate{
-  public void finishedAPICall();
-}
+
 public class API{
   private String url;
   URL obj;
