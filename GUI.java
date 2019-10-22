@@ -14,7 +14,6 @@ public class GUI{
   private String[][] data;
   public GUI(Drink d){
     setupMainWindow();
-    setupTextFields();
     setupButtons();
     frame.setLayout(null);
     //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
