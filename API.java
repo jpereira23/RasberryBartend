@@ -23,7 +23,8 @@ public class API{
       inputLine= in.readLine();
       System.out.println(inputLine);
       JSONObject json = new JSONObject(inputLine); 
-      System.out.println(json.getJSONObject("message").getString("drinkName"));
+      JSONArray arr = json.getJSONArray("message");
+      System.out.println(json.getJSONObject(0).getString("drinkName"));
       in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
