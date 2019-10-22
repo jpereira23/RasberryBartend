@@ -23,7 +23,7 @@ public class GUI{
 
   private void setupTableView(){
     String[][] data = {{aDrink.theDrink, aDrink.m_1, aDrink.m_2, aDrink.m_3, aDrink.m_4, aDrink.m_5, aDrink.m_6, aDrink.m_7, aDrink.m_8, aDrink.m_9, aDrink.m_10, aDrink.m_11, aDrink.m_12, aDrink.m_13, aDrink.m_14, aDrink.m_15}};
-    String[][] columns = {"Drink Name", "Slot 1", "Slot 2", "Slot 3", "Slot 4", "Slot 5", "Slot 6", "Slot 7", "Slot 8", "Slot 9", "Slot 10", "Slot 11", "Slot 12", "Slot 13", "Slot 14", "Slot 15"};
+    String[] columns = {"Drink Name", "Slot 1", "Slot 2", "Slot 3", "Slot 4", "Slot 5", "Slot 6", "Slot 7", "Slot 8", "Slot 9", "Slot 10", "Slot 11", "Slot 12", "Slot 13", "Slot 14", "Slot 15"};
     j = new JTable(data, columns);
     j.setBounds(50, 50 700, 300);
     
