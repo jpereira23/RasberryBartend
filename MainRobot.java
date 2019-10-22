@@ -12,10 +12,11 @@ interface APIDelegate{
 
 public class MainRobot implements APIDelegate{ 
   
-  public API a = new API();    
+  public API a;    
   public static void main(String[] args) throws InterruptedException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Robot r = new Robot();
+    a = new API();
     /*
     g.b1.addActionListener(new ActionListener()
     {
