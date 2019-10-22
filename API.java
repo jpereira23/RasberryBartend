@@ -15,7 +15,7 @@ public class API{
     url = "http://138.197.205.247:8080/api/drinks";
     System.out.println("Jeffs world");
     try {
-	
+      api = new MainRobot();	
       obj = new URL(url);
       con = (HttpURLConnection) obj.openConnection();
       con.setRequestMethod("GET");
