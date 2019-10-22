@@ -5,11 +5,13 @@ import javax.swing.*;
 import java.io.IOException;
 // Main Robot Project
 
-public interface APIDelegate{
-  public void finishedAPICall();
-}
+
+
 
 public class MainRobot implements APIDelegate{ 
+  interface APIDelegate{
+    public void finishedAPICall();
+  }
   public API a = new API();    
   public static void main(String[] args) throws InterruptedException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
