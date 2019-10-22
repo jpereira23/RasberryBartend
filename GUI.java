@@ -20,7 +20,7 @@ public class GUI{
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     aDrink = d;
-    //data = {{aDrink.theDrink, aDrink.m_1, aDrink.m_2, aDrink.m_3, aDrink.m_4, aDrink.m_5, aDrink.m_6, aDrink.m_7, aDrink.m_8, aDrink.m_9, aDrink.m_10, aDrink.m_11, aDrink.m_12, aDrink.m_13, aDrink.m_14, aDrink.m_15}};
+    data = {{aDrink.theDrink, aDrink.m_1, aDrink.m_2, aDrink.m_3, aDrink.m_4, aDrink.m_5, aDrink.m_6, aDrink.m_7, aDrink.m_8, aDrink.m_9, aDrink.m_10, aDrink.m_11, aDrink.m_12, aDrink.m_13, aDrink.m_14, aDrink.m_15}};
   }
 
 
