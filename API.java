@@ -26,7 +26,7 @@ public class API{
 
       }
             in.close();
-    } catch (IOException e){
+    } catch (IOException e, JSONException ex){
       System.out.println("Hello, world");
     }
   }
