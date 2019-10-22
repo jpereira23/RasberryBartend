@@ -28,5 +28,6 @@ public class MainRobot implements APIDelegate{
   @Override
   public void finishedAPICall(Drink d){
     GUI g = new GUI(d);
+    d.print();
   } 
 }
