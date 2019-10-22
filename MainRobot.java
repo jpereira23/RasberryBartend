@@ -6,12 +6,12 @@ import java.io.IOException;
 // Main Robot Project
 
 
-
+interface APIDelegate{
+    public void finishedAPICall();
+}
 
 public class MainRobot implements APIDelegate{ 
-  interface APIDelegate{
-    public void finishedAPICall();
-  }
+  
   public API a = new API();    
   public static void main(String[] args) throws InterruptedException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
@@ -26,7 +26,6 @@ public class MainRobot implements APIDelegate{
     */
   }
 
-  @Override
   public void finishedAPICall(){
     GUI g = new GUI(a.drink1);
   } 
