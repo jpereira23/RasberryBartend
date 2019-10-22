@@ -5,11 +5,11 @@ import javax.swing.*;
 import java.io.IOException;
 // Main Robot Project
 
-public class MainRobot{ 
+public class MainRobot implements APIDelegate{ 
   public static void main(String[] args) throws InterruptedException{
     int[] intArray = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+ 
     Robot r = new Robot();
-    API a = new API();    
     GUI g = new GUI(a.drink1);
     g.b1.addActionListener(new ActionListener()
     {
@@ -18,4 +18,9 @@ public class MainRobot{
       }
     });
   }
+
+  @Override
+  public void finishedAPICall(){
+    API a = new API();    
+  } 
 }

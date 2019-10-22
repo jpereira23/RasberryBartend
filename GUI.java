@@ -10,7 +10,6 @@ public class GUI{
   public JButton b2;
   private Drink aDrink; 
   public GUI(Drink d){
-
     setupMainWindow();
     setupTableView();
     setupButtons();
@@ -27,16 +26,12 @@ public class GUI{
     String[] columns = {"Drink Name", "Slot 1", "Slot 2", "Slot 3", "Slot 4", "Slot 5", "Slot 6", "Slot 7", "Slot 8", "Slot 9", "Slot 10", "Slot 11", "Slot 12", "Slot 13", "Slot 14", "Slot 15"};
     j = new JTable(data, columns);
     j.setBounds(50, 50, 700, 300);
-    
     frame.add(j);
-    
-    
   }
 
   private void setupMainWindow(){
     frame = new JFrame("Bartending Robot");
     frame.setSize(800, 500);
-   	
   }
 
   private void setupButtons(){
