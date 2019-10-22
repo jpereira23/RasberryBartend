@@ -18,9 +18,8 @@ public class Drink{
   public int m_13;
   public int m_14;
   public int m_15;
-  public int m_16;
 
-  public Drink(String drinkName, int one, int two, int three, int four, int five, int six, int seven, int eight, int nine, int ten, int eleven, int twelve, int thirteen, int fourteen, int fifteen, int sixteen){
+  public Drink(String drinkName, int one, int two, int three, int four, int five, int six, int seven, int eight, int nine, int ten, int eleven, int twelve, int thirteen, int fourteen, int fifteen){
     theDrink = drinkName;
     m_1 = one;
     m_2 = two;
@@ -37,6 +36,5 @@ public class Drink{
     m_13 = thirteen;
     m_14 = fourteen;
     m_15 = fifteen;
-    m_16 = sixteen;
   } 
 }
