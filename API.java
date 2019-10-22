@@ -26,7 +26,6 @@ public class API{
          System.out.println(inputLine);
       }
       in.close();
-      con.close();
     } catch (IOException e){
       System.out.println("Hello, world");
     }
