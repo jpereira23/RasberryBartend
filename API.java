@@ -30,7 +30,7 @@ public class API{
         System.out.println("Nope");
       }
             in.close();
-    } catch (IOException e, JSONException ex){
+    } catch (IOException e){
       System.out.println("Hello, world");
     }
   }
