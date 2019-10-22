@@ -22,8 +22,8 @@ public class API{
       StringBuffer content = new StringBuffer(); 
       inputLine= in.readLine();
       System.out.println(inputLine);
-      //JSONObject json = new JSONObject(inputLine); 
-      //System.out.println(json.getString
+      JSONObject json = new JSONObject(inputLine); 
+      System.out.println(json.getJSONObject("message").getString("drinkName"));
       in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
