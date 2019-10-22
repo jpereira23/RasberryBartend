@@ -24,7 +24,7 @@ public class API{
       System.out.println(inputLine);
       JSONObject json = new JSONObject(inputLine); 
       JSONArray arr = json.getJSONArray("message");
-      System.out.println(json.getJSONObject(0).getString("drinkName"));
+      System.out.println(arr.getJSONObject(0).getString("drinkName"));
       in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
