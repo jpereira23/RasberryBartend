@@ -10,7 +10,9 @@ public class GUI{
   public JButton b2;
   private Drink aDrink; 
   public GUI(Drink d){
+
     setupMainWindow();
+    setupTableView();
     setupButtons();
     frame.setLayout(null);
     //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -18,7 +20,6 @@ public class GUI{
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     aDrink = d;
-    setupTableView();
   }
 
   private void setupTableView(){
