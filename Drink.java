@@ -37,4 +37,23 @@ public class Drink{
     m_14 = Integer.toString(fourteen);
     m_15 = Integer.toString(fifteen);
   } 
+
+  public void print(){
+    System.out.println(theDrink);
+    System.out.println(m_1);
+    System.out.println(m_2);
+    System.out.println(m_3);
+    System.out.println(m_4);
+    System.out.println(m_5);
+    System.out.println(m_6);
+    System.out.println(m_7);
+    System.out.println(m_8);
+    System.out.println(m_9);
+    System.out.println(m_10);
+    System.out.println(m_11);
+    System.out.println(m_12);
+    System.out.println(m_13);
+    System.out.println(m_14);
+    System.out.println(m_15);
+  }
 }
