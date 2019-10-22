@@ -22,7 +22,7 @@ public class GUI{
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     aDrink = d;
-    data = { d.theDrink, d.m_1.toString(), d.m_2.toString(), d.m_3.toString(), d.m_4.toString(), d.m_5.toString(), d.m_6.toString(), d.m_7.toString(), d.m_8.toString(), d.m_9.toString(), d.m_10.toString(), d.m_11.toString(), d.m_12.toString(), d.m_13.toString, d.m_14.toString(), d.m_15.toString();
+    data = { d.theDrink, Integer.toString(d.m_1), Integer.toString(d.m_2), Integer.toString(d.m_3), Integer.toString(d.m_4), Integer.toString(d.m_5), Integer.toString(d.m_6), Integer.toString(d.m_7), Integer.toString(d.m_8), Integer.toString(d.m_9), Integer.toString(d.m_10), Integer.toString(d.m_11), Integer.toString(d.m_12), Integer.toString(d.m_13), Integer.toString(d.m_14), Integer.toString(d.m_15);
   }
 
 
