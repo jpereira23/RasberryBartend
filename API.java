@@ -16,8 +16,6 @@ public class API{
       obj = new URL(url);
       con = (HttpURLConnection) obj.openConnection();
       con.setRequestMethod("GET");
-      int responseCode = con.getResponseCode();
-      System.out.println(responseCode);
       con.setRequestProperty("Content-Type", "application/json");
       BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
       String inputLine;
