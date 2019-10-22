@@ -24,8 +24,8 @@ public class GUI{
   
   public JButton b1; 
   public JButton b2;
-
-  public GUI(){
+  private Drink aDrink;
+  public GUI(Drink d){
     setupMainWindow();
     setupTextFields();
     setupButtons();
@@ -34,7 +34,7 @@ public class GUI{
     //frame.setUndecorated(true);
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+    aDrink = d;
     
 
   }
