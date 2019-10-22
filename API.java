@@ -20,12 +20,10 @@ public class API{
       BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
       String inputLine;
       StringBuffer content = new StringBuffer(); 
+      inputLine= in.readLine();
       try{
-        while((inputLine = in.readLine()) != null){
           JSONObject json = new JSONObject(inputLine); 
           System.out.println(json.get("drinkName"));
-
-        }
       } catch (JSONException ex){
         System.out.println("Nope");
       }
