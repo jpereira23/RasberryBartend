@@ -28,7 +28,7 @@ public class API{
       JSONObject json = new JSONObject(inputLine); 
       JSONArray arr = json.getJSONArray("message");
       drink1 = new Drink(arr.getJSONObject(0).getString("drinkName"), arr.getJSONObject(0).getInt("slot1"), arr.getJSONObject(0).getInt("slot2"), arr.getJSONObject(0).getInt("slot3"), arr.getJSONObject(0).getInt("slot4"), arr.getJSONObject(0).getInt("slot5"), arr.getJSONObject(0).getInt("slot6"), arr.getJSONObject(0).getInt("slot7"), arr.getJSONObject(0).getInt("slot8"), arr.getJSONObject(0).getInt("slot9"), arr.getJSONObject(0).getInt("slot10"), arr.getJSONObject(0).getInt("slot11"), arr.getJSONObject(0).getInt("slot12"), arr.getJSONObject(0).getInt("slot13"), arr.getJSONObject(0).getInt("slot14"), arr.getJSONObject(0).getInt("slot15")); 
-      api.finishedAPICall();
+      api.finishedAPICall(drink1);
       in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
