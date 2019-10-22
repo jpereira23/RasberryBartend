@@ -21,9 +21,11 @@ public class API{
       String inputLine;
       StringBuffer content = new StringBuffer(); 
       while((inputLine = in.readLine()) != null){
-         System.out.println(inputLine);
+         JSONObject json = new JSONObject(inputLine); 
+         System.out.println(json.get("drinkName"));
+
       }
-      in.close();
+            in.close();
     } catch (IOException e){
       System.out.println("Hello, world");
     }
