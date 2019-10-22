@@ -27,6 +27,7 @@ public class MainRobot implements APIDelegate{
   }
   @Override
   public void finishedAPICall(){
+    System.out.println("Fuck you");
     GUI g = new GUI(a.drink1);
   } 
 }
