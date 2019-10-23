@@ -20,7 +20,6 @@ public class GUI{
     //frame.setUndecorated(true);
     frame.setVisible(true); 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    aDrink = d;
   }
 
   private void setupTableView(){
@@ -36,7 +35,7 @@ public class GUI{
     frame.setSize(800, 500);
   }
   
-  private void addData(Drink aDrink){
+  public void addData(Drink aDrink){
     System.out.println("Hello, World");
   }
 
