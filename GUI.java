@@ -2,6 +2,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+
+
 public class GUI{
   public JFrame frame;
   public JTable j;   
@@ -9,9 +11,9 @@ public class GUI{
   public JButton b1; 
   public JButton b2;
   private Drink aDrink; 
-  public GUI(Drink d){
+  public GUI(){
     setupMainWindow();
-    setupTableView();
+    //setupTableView();
     setupButtons();
     frame.setLayout(null);
     //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -32,6 +34,10 @@ public class GUI{
   private void setupMainWindow(){
     frame = new JFrame("Bartending Robot");
     frame.setSize(800, 500);
+  }
+  
+  private void addData(Drink aDrink){
+    System.out.println("Hello, World");
   }
 
   private void setupButtons(){
