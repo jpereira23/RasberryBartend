@@ -1,52 +1,64 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
+import java.net.*;
+import java.io.*;
+import java.io.IOException;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+
+interface ClientSocketDelegate{
+  void dataReceived(JSONObject object);
+}
+public class GUI implements ClientSocketDelegate{
+	private JFrame frame;
+	String[] columnNames = {"Random shit"};
+	Object[][] data = {
+    {"Kathy"}
+    };
+    JTable table;
+	public GUI(ClientSocket socket){
+		socket.delegate = this;
+		frame = new JFrame("Bartending Robot");
+    	frame.setSize(800, 500);
+    	DefaultTableModel model = new DefaultTableModel(); 
+    	model.addColumn("Drink Name");
+    	model.addColumn("Slot 1");
+    	model.addColumn("Slot 2");
+    	model.addColumn("Slot 3");
+    	model.addColumn("Slot 4");
+    	model.addColumn("Slot 5");
+    	model.addColumn("Slot 6");
+    	model.addColumn("Slot 7");
+    	model.addColumn("Slot 8");
+    	model.addColumn("Slot 9");
+    	model.addColumn("Slot 10");
+    	model.addColumn("Slot 11");
+    	model.addColumn("Slot 12");
+    	model.addColumn("Slot 13");
+    	model.addColumn("Slot 14");
+    	model.addColumn("Slot 15");
+    	
+    	table = new JTable(model);
+    	table.getColumnModel().getColumn(0).setPreferredWidth(300);
+
+    	
+
+    	table.setBounds(10, 10, 750, 400);
+    	frame.add(table);
+    	frame.setLayout(null);
+	    frame.setVisible(true); 
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
 
-public class GUI{
-  public JFrame frame;
-  public JTable j;   
- 
-  public JButton b1; 
-  public JButton b2;
-  private Drink aDrink; 
-  public GUI(){
-    setupMainWindow();
-    //setupTableView();
-    setupButtons();
-    frame.setLayout(null);
-    //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    //frame.setUndecorated(true);
-    frame.setVisible(true); 
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  }
+	    
 
-  private void setupTableView(){
-    String[][] data = {{aDrink.theDrink, aDrink.m_1, aDrink.m_2, aDrink.m_3, aDrink.m_4, aDrink.m_5, aDrink.m_6, aDrink.m_7, aDrink.m_8, aDrink.m_9, aDrink.m_10, aDrink.m_11, aDrink.m_12, aDrink.m_13, aDrink.m_14, aDrink.m_15}};
-    String[] columns = {"Drink Name", "Slot 1", "Slot 2", "Slot 3", "Slot 4", "Slot 5", "Slot 6", "Slot 7", "Slot 8", "Slot 9", "Slot 10", "Slot 11", "Slot 12", "Slot 13", "Slot 14", "Slot 15"};
-    j = new JTable(data, columns);
-    j.setBounds(50, 50, 700, 300);
-    frame.add(j);
-  }
+	}
 
-  private void setupMainWindow(){
-    frame = new JFrame("Bartending Robot");
-    frame.setSize(800, 500);
-  }
-  
-  public void addData(Drink aDrink){
-    System.out.println("Hello, World");
-  }
-
-  private void setupButtons(){
-    b1 = new JButton("Make Drink");
-    b2 = new JButton("Reset");
-
-    b1.setBounds(130, 250, 150, 30);
-    b2.setBounds(300, 250, 100, 30);
-
-    frame.add(b1);
-    frame.add(b2);
-  }
+	@Override 
+	public void dataReceived(JSONObject object){
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		model.addRow(new Object[]{object.get("drinkName"), object.get("slot1"), object.get("slot2"), object.get("slot3"), object.get("slot4"), object.get("slot5"), object.get("slot6"), object.get("slot7"), object.get("slot8"), object.get("slot9"), object.get("slot10"), object.get("slot11"), object.get("slot12"), object.get("slot13"), object.get("slot14"), object.get("slot15")});
+	}
 }
