@@ -8,7 +8,7 @@ public class Phone{
 
 	public static void main(String[] args){
 		JSONObject object = new JSONObject();
-		object.put("drinkName", "Favorite Drink");
+		object.put("drinkName", "Luke");
 		object.put("slot1", "1");
 		object.put("slot2", "2");
 		object.put("slot3", "3");

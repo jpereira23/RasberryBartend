@@ -5,6 +5,8 @@ import java.io.*;
 import java.io.IOException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.Queue; 
+import java.util.LinkedList;
 
 
 interface ClientSocketDelegate{
@@ -12,16 +14,25 @@ interface ClientSocketDelegate{
 }
 public class GUI implements ClientSocketDelegate{
 	private JFrame frame;
-	String[] columnNames = {"Random shit"};
-	Object[][] data = {
-    {"Kathy"}
-    };
-    JTable table;
+    private JTable table;
+    private Queue<Drink> queue;
+    private JButton pop;
 	public GUI(ClientSocket socket){
 		socket.delegate = this;
+		queue = new LinkedList<>();
 		frame = new JFrame("Bartending Robot");
     	frame.setSize(800, 500);
-    	DefaultTableModel model = new DefaultTableModel(); 
+    	makeTable();
+    	makeButton();
+    	frame.add(table);
+    	frame.add(pop);
+    	frame.setLayout(null);
+	    frame.setVisible(true); 
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void makeTable(){
+		DefaultTableModel model = new DefaultTableModel(); 
     	model.addColumn("Drink Name");
     	model.addColumn("Slot 1");
     	model.addColumn("Slot 2");
@@ -42,23 +53,30 @@ public class GUI implements ClientSocketDelegate{
     	table = new JTable(model);
     	table.getColumnModel().getColumn(0).setPreferredWidth(300);
 
-    	
-
     	table.setBounds(10, 10, 750, 400);
-    	frame.add(table);
-    	frame.setLayout(null);
-	    frame.setVisible(true); 
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 
+	private void makeButton(){
+		pop = new JButton("Simulate Drink Done");
+		pop.setBounds(100, 450, 150, 20);
 
+		pop.addActionListener(new ActionListener() {
 
-	    
-
+			@Override 
+			public void actionPerformed(ActionEvent e){
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+				queue.remove();
+				model.removeRow(0);
+			}
+		});
 	}
 
 	@Override 
 	public void dataReceived(JSONObject object){
+
+		Drink aDrink = new Drink(object);
+		queue.add(aDrink);
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		model.addRow(new Object[]{object.get("drinkName"), object.get("slot1"), object.get("slot2"), object.get("slot3"), object.get("slot4"), object.get("slot5"), object.get("slot6"), object.get("slot7"), object.get("slot8"), object.get("slot9"), object.get("slot10"), object.get("slot11"), object.get("slot12"), object.get("slot13"), object.get("slot14"), object.get("slot15")});
+		model.addRow(aDrink.getObject());
 	}
 }
