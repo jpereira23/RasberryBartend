@@ -21,7 +21,7 @@ public class GUI implements ClientSocketDelegate{
 		socket.delegate = this;
 		queue = new LinkedList<>();
 		frame = new JFrame("Bartending Robot");
-    	frame.setSize(800, 500);
+    	frame.setSize(800, 450);
     	makeTable();
     	makeButton();
     	frame.add(table);
@@ -53,12 +53,12 @@ public class GUI implements ClientSocketDelegate{
     	table = new JTable(model);
     	table.getColumnModel().getColumn(0).setPreferredWidth(300);
 
-    	table.setBounds(10, 10, 750, 400);
+    	table.setBounds(10, 10, 750, 350);
 	}
 
 	private void makeButton(){
 		pop = new JButton("Simulate Drink Done");
-		pop.setBounds(100, 450, 150, 20);
+		pop.setBounds(100, 400, 150, 20);
 
 		pop.addActionListener(new ActionListener() {
 
