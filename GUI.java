@@ -17,7 +17,8 @@ public class GUI implements ClientSocketDelegate{
     private JTable table;
     private Queue<Drink> queue;
     private JButton pop;
-	public GUI(ClientSocket socket){
+    private Robot localRobot;
+	public GUI(ClientSocket socket, Robot robot){
 		socket.delegate = this;
 		queue = new LinkedList<>();
 		frame = new JFrame("Bartending Robot");
@@ -29,6 +30,7 @@ public class GUI implements ClientSocketDelegate{
     	frame.setLayout(null);
 	    frame.setVisible(true); 
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      localRobot = robot;
 	}
 
 	private void makeTable(){
