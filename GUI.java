@@ -75,9 +75,9 @@ public class GUI implements ClientSocketDelegate{
 
 	@Override 
 	public void dataReceived(JSONObject object){
-
-		Drink aDrink = new Drink(object);
-		queue.add(aDrink);
+        Drink aDrink = new Drink(object);
+		localRobot.makeDrink(aDrink.slotArray);
+        queue.add(aDrink);
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(aDrink.getObject());
 	}
