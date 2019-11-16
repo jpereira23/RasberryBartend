@@ -26,6 +26,7 @@ import java.awt.event.*;
    private GpioPinDigitalOutput pump16;
    private GpioPinDigitalInput irSensor;    
    private GpioPinDigitalOutput[] GpioArray;
+   private isBusy: Boolean = false;
 
    public Robot(){
      gpio = GpioFactory.getInstance();
@@ -68,19 +69,25 @@ import java.awt.event.*;
 
    }
 
-   public void makeDrink(int[] a){
-     for(int i = 0; i < 16; i++){
-       try{
-         GpioArray[i].low();
-         Thread.sleep(a[i]*1000);
-         GpioArray[i].high();
-       } catch (InterruptedException error){
-         System.out.println("Error");
-       }
-     }
-   }
+    public void makeDrink(int[] a){
+      isBusy = true;
+      for(int i = 0; i < 16; i++){
+        try{
+          GpioArray[i].low();
+          Thread.sleep(a[i]*1000);
+          GpioArray[i].high();
+        } catch (InterruptedException error){
+          System.out.println("Error");
+        }
+      }
+      isBusy = false;
+    }
 
    public void shutdownProtocol(){
      gpio.shutdown();
+   }
+
+   public Boolean busy(){
+      return isBusy;
    }
  } 

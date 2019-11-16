@@ -59,6 +59,7 @@ public class GUI implements ClientSocketDelegate{
 	}
 
 	private void makeButton(){
+
 		pop = new JButton("Simulate Drink Done");
 		pop.setBounds(100, 400, 150, 20);
 
@@ -66,9 +67,15 @@ public class GUI implements ClientSocketDelegate{
 
 			@Override 
 			public void actionPerformed(ActionEvent e){
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-				queue.remove();
-				model.removeRow(0);
+
+                if(!localRobot.busy()){
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+    				queue.remove();
+    				model.removeRow(0);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Robot is making drink, be patient");
+                }
+
 			}
 		});
 	}
@@ -79,6 +86,8 @@ public class GUI implements ClientSocketDelegate{
         queue.add(aDrink);
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(aDrink.getObject());
-        localRobot.makeDrink(aDrink.getSlots());
+        if (!localRobot.busy()){
+            localRobot.makeDrink(aDrink.getSlots());
+        }
 	}
 }
