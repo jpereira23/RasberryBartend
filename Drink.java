@@ -36,4 +36,8 @@ public class Drink{
 
 		return objArray;
 	}
+
+	private Int[] getSlots(){
+		return slotArray;
+	}
 }
