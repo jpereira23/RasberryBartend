@@ -26,7 +26,7 @@ import java.awt.event.*;
    private GpioPinDigitalOutput pump16;
    private GpioPinDigitalInput irSensor;    
    private GpioPinDigitalOutput[] GpioArray;
-   private isBusy: Boolean = false;
+   private Boolean isBusy;
 
    public Robot(){
      gpio = GpioFactory.getInstance();
@@ -66,6 +66,8 @@ import java.awt.event.*;
      pump14.setShutdownOptions(true, PinState.LOW);
      pump15.setShutdownOptions(true, PinState.LOW);
      pump16.setShutdownOptions(true, PinState.LOW);
+
+     isBusy = false;
 
    }
 
