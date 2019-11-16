@@ -37,7 +37,7 @@ public class Drink{
 		return objArray;
 	}
 
-	private Int[] getSlots(){
+	public Int[] getSlots(){
 		return slotArray;
 	}
 }
