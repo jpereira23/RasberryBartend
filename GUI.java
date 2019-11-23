@@ -86,10 +86,10 @@ public class GUI implements ClientSocketDelegate{
         queue.add(aDrink);
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(aDrink.getObject());
-        JOptionPane.showMessageDialog(null, "Before drink is being made");
+        
         if (!localRobot.busy()){
             localRobot.makeDrink(aDrink.getSlots());
         }
-        JOptionPane.showMessageDialog(null, "Its not suppose to still be making the drink");
+        
 	}
 }

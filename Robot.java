@@ -80,8 +80,6 @@ import javax.swing.*;
           GpioArray[i].low();
           Thread.sleep(a[i]*1000);
           GpioArray[i].high();
-          
-          JOptionPane.showMessageDialog(null, "A GPIO ran its instance");
         } catch (InterruptedException error){
           System.out.println("Error");
         }
