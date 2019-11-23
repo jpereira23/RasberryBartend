@@ -49,8 +49,8 @@ import java.awt.event.*;
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_17, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15, pump16};
-
-     pump1.setShutdownOptions(true, PinState.LOW);
+     /*
+     pump1.setShutdownOptions(true, PinState.HIGH);
      pump2.setShutdownOptions(true, PinState.LOW);
      pump3.setShutdownOptions(true, PinState.LOW);
      pump4.setShutdownOptions(true, PinState.LOW);
@@ -66,6 +66,7 @@ import java.awt.event.*;
      pump14.setShutdownOptions(true, PinState.LOW);
      pump15.setShutdownOptions(true, PinState.LOW);
      pump16.setShutdownOptions(true, PinState.LOW);
+     */
 
      isBusy = false;
 

@@ -89,5 +89,6 @@ public class GUI implements ClientSocketDelegate{
         if (!localRobot.busy()){
             localRobot.makeDrink(aDrink.getSlots());
         }
+        JOptionPane.showMessageDialog(null, "Its not suppose to still be making the drink");
 	}
 }
