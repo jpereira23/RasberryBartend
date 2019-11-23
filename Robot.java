@@ -76,9 +76,12 @@ import java.awt.event.*;
       isBusy = true;
       for(int i = 0; i < 16; i++){
         try{
+          
           GpioArray[i].low();
           Thread.sleep(a[i]*1000);
           GpioArray[i].high();
+          
+          JOptionPane.showMessageDialog(null, "A GPIO ran its instance");
         } catch (InterruptedException error){
           System.out.println("Error");
         }
