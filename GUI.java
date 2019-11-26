@@ -60,7 +60,7 @@ public class GUI implements ClientSocketDelegate{
 
 	private void makeButton(){
 
-		//pop = new JButton("Simulate Drink Done");
+		pop = new JButton("Simulate Drink Done");
 		pop.setBounds(100, 400, 150, 20);
 
 		pop.addActionListener(new ActionListener() {
