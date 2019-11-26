@@ -70,23 +70,32 @@ import javax.swing.*;
      */
 
      isBusy = false;
-
+     
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
             public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
                 // display pin state on console
                 // System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
-              JOptionPane.showMessageDialog(null, "IR Sensor is on");
-              isBusy = false;
+              //JOptionPane.showMessageDialog(null, "IR Sensor is on");
+              if(event.getState() == "HIGH"){
+                JOptionPane.showMessageDialog(null, "Pin is HIGH");
+              } else if(event.getState() == "LOW"){
+                JOptionPane.showMessageDialog(null, "Pin is LOW");
+              }
+
+
+              //isBusy = false;
             }
 
         });
+      
 
 
    }
 
     public void makeDrink(int[] a){
       isBusy = true;
+      if(irSensor.)
       for(int i = 0; i < 15; i++){
         try{
           
