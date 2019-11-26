@@ -47,7 +47,7 @@ import javax.swing.*;
      pump14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08, "My Led", PinState.HIGH);
      pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, "My Led", PinState.HIGH);
      //pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "My Led", PinState.HIGH);
-     irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_17, PinPullResistance.PULL_DOWN);
+     irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
      /*
