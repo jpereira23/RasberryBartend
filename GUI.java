@@ -12,7 +12,7 @@ import java.util.LinkedList;
 interface ClientSocketDelegate{
   void dataReceived(JSONObject object);
 }
-public class GUI implements ClientSocketDelegate, RobotDelegate{
+public class GUI implements ClientSocketDelegate{
 	private JFrame frame;
     private JTable table;
     private Queue<Drink> queue;
