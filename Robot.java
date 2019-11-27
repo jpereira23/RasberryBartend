@@ -77,9 +77,9 @@ import javax.swing.*;
                 // display pin state on console
                 // System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
-              if(event.getState() == "HIGH"){
+              if(event.getState() == PinState.HIGH){
                 JOptionPane.showMessageDialog(null, "Pin is HIGH");
-              } else if(event.getState() == "LOW"){
+              } else if(event.getState() == PinState.LOW){
                 JOptionPane.showMessageDialog(null, "Pin is LOW");
               }
 
