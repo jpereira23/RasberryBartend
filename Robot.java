@@ -95,7 +95,7 @@ import javax.swing.*;
 
     public void makeDrink(int[] a){
       isBusy = true;
-      if(irSensor.)
+      
       for(int i = 0; i < 15; i++){
         try{
           
