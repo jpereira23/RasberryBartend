@@ -102,10 +102,13 @@ import javax.swing.*;
           GpioArray[i].low();
           Thread.sleep(a[i]*1000);
           GpioArray[i].high();
+
         } catch (InterruptedException error){
           System.out.println("Error");
         }
+
       }
+      isBusy = false;
     }
 
    public void shutdownProtocol(){
