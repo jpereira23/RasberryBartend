@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*; 
 import javax.swing.*;
- import com.pi4j.io.gpio.event.GpioPinListenerDigital;
- import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
- import com.pi4j.io.gpio.*;
+import com.pi4j.io.gpio.event.GpioPinListenerDigital;
+import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
+import com.pi4j.io.gpio.*;
 
 
  public class Robot {
@@ -27,6 +27,8 @@ import javax.swing.*;
    private GpioPinDigitalInput irSensor;    
    private GpioPinDigitalOutput[] GpioArray;
    private Boolean isBusy;
+   public RobotDelegate delegate;
+
    
 
    public Robot(){
@@ -78,9 +80,11 @@ import javax.swing.*;
                 // System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
               if(event.getState() == PinState.HIGH){
-                JOptionPane.showMessageDialog(null, "Pin is HIGH");
+                delegate.isHigh();
+                
               } else if(event.getState() == PinState.LOW){
-                JOptionPane.showMessageDialog(null, "Pin is LOW");
+                delegate.isLow();
+                
               }
 
 

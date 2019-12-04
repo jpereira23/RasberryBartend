@@ -8,11 +8,14 @@ import javax.swing.table.DefaultTableModel;
 import java.util.Queue; 
 import java.util.LinkedList;
 
-
+interface RobotDelegate{
+    void isHigh();
+    void isLow();
+}
 interface ClientSocketDelegate{
   void dataReceived(JSONObject object);
 }
-public class GUI implements ClientSocketDelegate{
+public class GUI implements ClientSocketDelegate, RobotDelegate{
 	private JFrame frame;
     private JTable table;
     private Queue<Drink> queue;
@@ -20,6 +23,7 @@ public class GUI implements ClientSocketDelegate{
     private Robot localRobot;
 	public GUI(ClientSocket socket, Robot robot){
 		socket.delegate = this;
+        robot.delegate = this;
 		queue = new LinkedList<>();
 		frame = new JFrame("Bartending Robot");
     	frame.setSize(800, 450);
@@ -92,4 +96,14 @@ public class GUI implements ClientSocketDelegate{
         }
         
 	}
+
+    @Override
+    public void isHigh(){
+        JOptionPane.showMessageDialog(null, "Delegate is High");
+    }
+
+    @Override
+    public void isLow(){
+       JOptionPane.showMessageDialog(null, "Delegate is Low"); 
+    }
 }
