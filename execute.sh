@@ -1,5 +1,5 @@
 #!/bin/bash
- javac -classpath .:classes:/opt/pi4j/lib/'*' -d GUI.java
+ javac -classpath .:classes:/opt/pi4j/lib/'*' -d . GUI.java
  javac -classpath .:classes:/opt/pi4j/lib/'*' -d . Robot.java
  
  if [ $? -eq 0 ]; then

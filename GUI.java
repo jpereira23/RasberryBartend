@@ -12,6 +12,7 @@ interface RobotDelegate{
     void isHigh();
     void isLow();
 }
+
 interface ClientSocketDelegate{
   void dataReceived(JSONObject object);
 }
