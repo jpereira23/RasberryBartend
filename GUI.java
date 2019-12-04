@@ -29,9 +29,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 		frame = new JFrame("Bartending Robot");
     	frame.setSize(800, 450);
     	makeTable();
-    	makeButton();
     	frame.add(table);
-    	frame.add(pop);
     	frame.setLayout(null);
 	    frame.setVisible(true); 
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,28 +61,6 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
     	table.setBounds(10, 10, 750, 350);
 	}
 
-	private void makeButton(){
-
-		pop = new JButton("Simulate Drink Done");
-		pop.setBounds(100, 400, 150, 20);
-
-		pop.addActionListener(new ActionListener() {
-
-			@Override 
-			public void actionPerformed(ActionEvent e){
-
-                if(!localRobot.busy()){
-                    DefaultTableModel model = (DefaultTableModel) table.getModel();
-    				queue.remove();
-    				model.removeRow(0);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Robot is making drink, be patient");
-                }
-
-			}
-		});
-	}
-
 	@Override 
 	public void dataReceived(JSONObject object){
         Drink aDrink = new Drink(object);
@@ -100,11 +76,14 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 
     @Override
     public void isHigh(){
-        JOptionPane.showMessageDialog(null, "Delegate is High");
+        localRobot.makeDrink(aDrink.getSlots());
     }
 
     @Override
     public void isLow(){
-       JOptionPane.showMessageDialog(null, "Delegate is Low"); 
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+                    queue.remove();
+                    model.removeRow(0);
+       JOptionPane.showMessageDialog(null, "Please place cup for next Drink"); 
     }
 }
