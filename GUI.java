@@ -81,6 +81,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 
     @Override
     public void isLow(){
+        localRobot.setAllLow();
         DefaultTableModel model = (DefaultTableModel) table.getModel();
                     queue.remove();
                     model.removeRow(0);

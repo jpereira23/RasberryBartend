@@ -106,7 +106,6 @@ import com.pi4j.io.gpio.*;
       if(isIR == false){
         for(int i = 0; i < 15; i++){
           if(breakLoop == true){
-            setAllLow();
             break;
           }
           try{
@@ -125,7 +124,8 @@ import com.pi4j.io.gpio.*;
       isBusy = false;
   }
 
-  private void setAllLow(){
+  public void setAllLow(){
+    isIR = true;
     for(int i = 0; i < 15; i++){
       GpioArray[i].high();
     }
