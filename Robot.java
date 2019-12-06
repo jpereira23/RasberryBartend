@@ -106,7 +106,7 @@ import com.pi4j.io.gpio.*;
       if(isIR == false){
         for(int i = 0; i < 15; i++){
           if(breakLoop == true){
-            setAllLow()
+            setAllLow();
             break;
           }
           try{
