@@ -29,6 +29,7 @@ import com.pi4j.io.gpio.*;
    private Boolean isBusy;
    public RobotDelegate delegate;
    public Boolean isIR;
+   public Boolean breakLoop;
 
    
 
@@ -74,6 +75,7 @@ import com.pi4j.io.gpio.*;
 
      isBusy = false;
      isIR = false;
+     breakLoop = false;
      
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
@@ -103,6 +105,9 @@ import com.pi4j.io.gpio.*;
       isBusy = true;
       if(isIR == false){
         for(int i = 0; i < 15; i++){
+          if(breakLoop == true){
+            break;
+          }
           try{
             
             GpioArray[i].low();
@@ -115,8 +120,15 @@ import com.pi4j.io.gpio.*;
 
         }
       }
+      breakLoop = false;
       isBusy = false;
+  }
+
+  private void setAllLow(){
+    for(int i = 0; i < 15; i++){
+      gpioArray[i].high();
     }
+  }
 
    public void shutdownProtocol(){
      gpio.shutdown();
