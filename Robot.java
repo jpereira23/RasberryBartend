@@ -81,7 +81,6 @@ import com.pi4j.io.gpio.*;
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
               if(event.getState() == PinState.HIGH){
                 delegate.isHigh();
-                
               } else if(event.getState() == PinState.LOW){
                 delegate.isLow();
                 
@@ -99,18 +98,19 @@ import com.pi4j.io.gpio.*;
 
     public void makeDrink(int[] a){
       isBusy = true;
-      
-      for(int i = 0; i < 15; i++){
-        try{
-          
-          GpioArray[i].low();
-          Thread.sleep(a[i]*1000);
-          GpioArray[i].high();
+      if(event.getState() == PinState.HIGH){
+        for(int i = 0; i < 15; i++){
+          try{
+            
+            GpioArray[i].low();
+            Thread.sleep(a[i]*1000);
+            GpioArray[i].high();
 
-        } catch (InterruptedException error){
-          System.out.println("Error");
+          } catch (InterruptedException error){
+            System.out.println("Error");
+          }
+
         }
-
       }
       isBusy = false;
     }
