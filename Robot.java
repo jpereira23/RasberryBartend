@@ -28,6 +28,7 @@ import com.pi4j.io.gpio.*;
    private GpioPinDigitalOutput[] GpioArray;
    private Boolean isBusy;
    public RobotDelegate delegate;
+   public Boolean isIR;
 
    
 
@@ -72,6 +73,7 @@ import com.pi4j.io.gpio.*;
      */
 
      isBusy = false;
+     isIr = false;
      
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
@@ -81,9 +83,10 @@ import com.pi4j.io.gpio.*;
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
               if(event.getState() == PinState.HIGH){
                 delegate.isHigh();
+                isIr = true;
               } else if(event.getState() == PinState.LOW){
                 delegate.isLow();
-                
+                isIr = false; 
               }
 
 
@@ -98,7 +101,7 @@ import com.pi4j.io.gpio.*;
 
     public void makeDrink(int[] a){
       isBusy = true;
-      if(event.getState() == PinState.HIGH){
+      if(isIr == false){
         for(int i = 0; i < 15; i++){
           try{
             
