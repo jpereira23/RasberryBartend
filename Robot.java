@@ -73,7 +73,7 @@ import com.pi4j.io.gpio.*;
      */
 
      isBusy = false;
-     isIr = false;
+     isIR = false;
      
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
@@ -83,10 +83,10 @@ import com.pi4j.io.gpio.*;
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
               if(event.getState() == PinState.HIGH){
                 delegate.isHigh();
-                isIr = true;
+                isIR = true;
               } else if(event.getState() == PinState.LOW){
                 delegate.isLow();
-                isIr = false; 
+                isIR = false; 
               }
 
 
