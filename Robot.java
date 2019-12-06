@@ -101,7 +101,7 @@ import com.pi4j.io.gpio.*;
 
     public void makeDrink(int[] a){
       isBusy = true;
-      if(isIr == false){
+      if(isIR == false){
         for(int i = 0; i < 15; i++){
           try{
             
