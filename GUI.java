@@ -76,7 +76,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 
     @Override
     public void isHigh(){
-        localRobot.makeDrink(aDrink.getSlots());
+        localRobot.makeDrink(queue.element().getSlots());
     }
 
     @Override
