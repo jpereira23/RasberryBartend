@@ -103,9 +103,10 @@ import com.pi4j.io.gpio.*;
 
     public void makeDrink(int[] a){
       isBusy = true;
-      outerloop:
+      
       if(isIR == false){
         for(int i = 0; i < 15; i++){
+          outerloop:
           if(breakLoop == true){
             
             break outerloop;
