@@ -126,7 +126,7 @@ import com.pi4j.io.gpio.*;
 
   private void setAllLow(){
     for(int i = 0; i < 15; i++){
-      gpioArray[i].high();
+      GpioArray[i].high();
     }
   }
 
