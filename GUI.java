@@ -82,14 +82,15 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
                     queue.remove();
                     model.removeRow(0);
                     */
-       JOptionPane.showMessageDialog(null, "ITS LOW"); 
+                    JOptionPane.showMessageDialog(null, "ITS HIGH");
+       
     }
 
     @Override
     public void isLow(){
         
         //if(!localRobot.busy()){
-            JOptionPane.showMessageDialog(null, "ITS HIGH");
+            JOptionPane.showMessageDialog(null, "ITS LOW"); 
             //localRobot.makeDrink(queue.element().getSlots());
         //}
     }
