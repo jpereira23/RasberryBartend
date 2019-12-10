@@ -76,7 +76,10 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 
     @Override
     public void isHigh(){
-        localRobot.makeDrink(queue.element().getSlots());
+        if(!localRobot.busy()){
+            JOptionPane.showMessageDialog(null, "ITS HIGH");
+            localRobot.makeDrink(queue.element().getSlots());
+        }
     }
 
     @Override
