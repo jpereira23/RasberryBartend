@@ -89,7 +89,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
     public void isLow(){
         
         //if(!localRobot.busy()){
-            JOptionPane.showMessageDialog(null, "ITS HIGH");*/
+            JOptionPane.showMessageDialog(null, "ITS HIGH");
             //localRobot.makeDrink(queue.element().getSlots());
         //}
     }
