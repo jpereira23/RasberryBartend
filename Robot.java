@@ -83,7 +83,7 @@ import com.pi4j.io.gpio.*;
                 // display pin state on console
                 // System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
               //JOptionPane.showMessageDialog(null, "IR Sensor is on");
-              /*
+              
               if(event.getState() == PinState.HIGH){
                 delegate.isHigh();
                 isIR = true;
@@ -91,7 +91,7 @@ import com.pi4j.io.gpio.*;
                 delegate.isLow();
                 isIR = false; 
               }
-              */
+              
 
 
               //isBusy = false;
