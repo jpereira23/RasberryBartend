@@ -68,7 +68,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(aDrink.getObject());
         
-        if (!localRobot.busy()){
+        if (localRobot.busy() == false){
             localRobot.makeDrink(aDrink.getSlots());
         }
         
