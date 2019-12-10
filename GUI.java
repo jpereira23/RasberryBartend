@@ -76,18 +76,18 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
 
     @Override
     public void isHigh(){
-        if(!localRobot.busy()){
-            JOptionPane.showMessageDialog(null, "ITS HIGH");
-            localRobot.makeDrink(queue.element().getSlots());
-        }
-    }
-
-    @Override
-    public void isLow(){
         localRobot.setAllLow();
         DefaultTableModel model = (DefaultTableModel) table.getModel();
                     queue.remove();
                     model.removeRow(0);
        JOptionPane.showMessageDialog(null, "Please place cup for next Drink"); 
+    }
+
+    @Override
+    public void isLow(){
+        if(!localRobot.busy()){
+            JOptionPane.showMessageDialog(null, "ITS HIGH");
+            localRobot.makeDrink(queue.element().getSlots());
+        }
     }
 }

@@ -52,7 +52,6 @@ import com.pi4j.io.gpio.*;
      pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, "My Led", PinState.HIGH);
      //pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "My Led", PinState.HIGH);
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
-     irSensor.low();
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
      /*
