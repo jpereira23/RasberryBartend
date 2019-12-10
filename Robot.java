@@ -73,7 +73,7 @@ import com.pi4j.io.gpio.*;
      pump16.setShutdownOptions(true, PinState.LOW);
      */
 
-     isBusy = false;
+     this.isBusy = true;
      isIR = false;
      breakLoop = false;
      
@@ -121,7 +121,7 @@ import com.pi4j.io.gpio.*;
               Thread.sleep(a[i]*1000);
               GpioArray[i].high();
             }
-            this.isBusy = false;
+            //this.isBusy = false;
 
           } catch (InterruptedException error){
             System.out.println("Error");
