@@ -104,11 +104,11 @@ import com.pi4j.io.gpio.*;
    }
 
     public void makeDrink(int[] a){
-      isBusy = true;
+      this.isBusy = true;
       /*
       if(isIR == false){
         */
-        for(int i = 0; i < 15; i++){
+        
           /*
           outerloop:
           if(breakLoop == true){
@@ -116,20 +116,21 @@ import com.pi4j.io.gpio.*;
           }
           */
           try{
-            
-            GpioArray[i].low();
-            Thread.sleep(a[i]*1000);
-            GpioArray[i].high();
+            for(int i = 0; i < 15; i++){
+              GpioArray[i].low();
+              Thread.sleep(a[i]*1000);
+              GpioArray[i].high();
+            }
+            this.isBusy = false;
 
           } catch (InterruptedException error){
             System.out.println("Error");
           }
 
-        }
+        
 
       //}
       //breakLoop = false;
-      isBusy = false;
   }
 
   public void setAllLow(){
@@ -144,6 +145,6 @@ import com.pi4j.io.gpio.*;
    }
 
    public Boolean busy(){
-      return isBusy;
+      return this.isBusy;
    }
  } 

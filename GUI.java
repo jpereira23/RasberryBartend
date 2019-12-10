@@ -82,10 +82,10 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
                     queue.remove();
                     model.removeRow(0);
                     */
-                    if(!localRobot.busy()){
-                        JOptionPane.showMessageDialog(null, "ITS HIGH");
-                        localRobot.makeDrink(queue.element().getSlots());
-                    }
+                    //if(!localRobot.busy()){
+                        //JOptionPane.showMessageDialog(null, "ITS HIGH");
+                        //localRobot.makeDrink(queue.element().getSlots());
+                    //}
        
     }
 
@@ -93,7 +93,7 @@ public class GUI implements ClientSocketDelegate, RobotDelegate{
     public void isLow(){
         
         //
-            JOptionPane.showMessageDialog(null, "ITS LOW"); 
+            //JOptionPane.showMessageDialog(null, "ITS LOW"); 
             //
         //
     }
