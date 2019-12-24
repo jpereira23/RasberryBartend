@@ -32,7 +32,7 @@ public class MainPage{
 		createTable();
 
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 50, 800, 370);
+		contentPanel.setBounds(0, 50, 800, 340);
 
 		component.add(contentPanel);
 		component.add(makeButton);
