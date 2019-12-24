@@ -20,11 +20,11 @@ public class MainPage{
 		headerLabel = new JLabel("Please Select Drink");
 		headerLabel.setBounds(0, 0, 600, 50);
 		makeButton = new JButton("Make");
-		makeButton.setBounds(340, 435, 100, 50);
+		makeButton.setBounds(340, 415, 100, 50);
 		adminButton = new JButton("Admin"); 
 		adminButton.setBounds(600, 0, 200, 50);
 		component = new JPanel();
-		component.setBounds(0, 0, 800, 500);
+		component.setBounds(0, 0, 800, 450);
 		component.setLayout(null);
 		
 
@@ -32,7 +32,7 @@ public class MainPage{
 		createTable();
 
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 50, 800, 390);
+		contentPanel.setBounds(0, 50, 800, 370);
 
 		component.add(contentPanel);
 		component.add(makeButton);
