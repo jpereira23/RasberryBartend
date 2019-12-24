@@ -17,20 +17,20 @@ public class AlcoholMixerPage{
 		headerLabel.setBounds(0, 0, 800, 50);
 
 		component = new JPanel();
-		component.setBounds(0, 0, 800, 500);
+		component.setBounds(0, 0, 800, 450);
 		component.setLayout(null);
 
 		makeButton = new JButton("Make");
-		makeButton.setBounds(100, 430, 100, 50);
+		makeButton.setBounds(100, 400, 100, 50);
 		createButton = new JButton("Create");
-		createButton.setBounds(400, 430, 100, 50);
+		createButton.setBounds(400, 400, 100, 50);
 
 
 
 		createTable();
 
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 50, 800, 390);
+		contentPanel.setBounds(0, 50, 800, 370);
 
 		component.add(contentPanel);
 
@@ -46,7 +46,7 @@ public class AlcoholMixerPage{
 
 		table = new JTable(model);
 		table.getColumnModel().getColumn(0).setPreferredWidth(300);
-		table.setBounds(0, 0, 800, 350);
+		table.setBounds(0, 0, 800, 330);
 	}
 
 	public JPanel getContentPanel(){

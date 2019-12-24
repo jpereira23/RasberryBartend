@@ -20,7 +20,7 @@ public class AlcoholMixerCreate{
 		nameLabel = new JLabel("Enter Name");
 		nameLabel.setBounds(50, 50, 100, 50);
 		mainFrame = new JFrame();
-		mainFrame.setBounds(300, 25, 200, 450);
+		mainFrame.setBounds(300, 25, 200, 430);
 
 		mainFrame.add(doneButton);
 		mainFrame.add(nameLabel);
