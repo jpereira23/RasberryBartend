@@ -21,16 +21,16 @@ public class AlcoholMixerPage{
 		component.setLayout(null);
 
 		makeButton = new JButton("Make");
-		makeButton.setBounds(100, 400, 100, 50);
+		makeButton.setBounds(100, 365, 100, 50);
 		createButton = new JButton("Create");
-		createButton.setBounds(400, 400, 100, 50);
+		createButton.setBounds(400, 365, 100, 50);
 
 
 
 		createTable();
 
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 50, 800, 370);
+		contentPanel.setBounds(0, 50, 800, 315);
 
 		component.add(contentPanel);
 
