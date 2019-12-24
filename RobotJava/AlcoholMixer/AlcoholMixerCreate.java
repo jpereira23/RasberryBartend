@@ -9,6 +9,7 @@ public class AlcoholMixerCreate{
 	private JButton doneButton;
 	private JLabel nameLabel;
 	private JTextField nameField;
+	
 	public AlcoholMixerCreate(){
 		doneButton = new JButton("Done");
 		doneButton.setBounds(50, 300, 100, 50);
@@ -27,17 +28,17 @@ public class AlcoholMixerCreate{
 		mainFrame.setUndecorated(true);
 		mainFrame.setLayout(null);
 
-		doneButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				mainFrame.dispose();
-			}
-		});
-
 	}
 
 	public void displayPopUp(){
 		mainFrame.setVisible(true);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Already there
     	//mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+    	doneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				mainFrame.dispose();
+			}
+		});
 	}
 }
