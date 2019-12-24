@@ -22,7 +22,7 @@ public class GUIManager{
 		JPanel adminWizard = page1.getContentPanel();
 		JPanel alcoholMixerPage = page2.getContentPanel();
 		mainFrame = new JFrame("Bartending Robot");  
-		mainFrame.setBounds(0, 0, 800, 450);
+		mainFrame.setBounds(0, 0, 800, 425);
 		mainFrame.add(mainPage);
 		
 		mainFrame.setLayout(null);

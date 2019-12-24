@@ -17,7 +17,7 @@ public class AlcoholMixerPage{
 		headerLabel.setBounds(0, 0, 800, 50);
 
 		component = new JPanel();
-		component.setBounds(0, 0, 800, 450);
+		component.setBounds(0, 0, 800, 425);
 		component.setLayout(null);
 
 		makeButton = new JButton("Make");

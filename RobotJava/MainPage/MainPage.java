@@ -24,7 +24,7 @@ public class MainPage{
 		adminButton = new JButton("Admin"); 
 		adminButton.setBounds(600, 0, 200, 50);
 		component = new JPanel();
-		component.setBounds(0, 0, 800, 450);
+		component.setBounds(0, 0, 800, 425);
 		component.setLayout(null);
 		
 
@@ -32,7 +32,7 @@ public class MainPage{
 		createTable();
 
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 50, 800, 340);
+		contentPanel.setBounds(0, 50, 800, 315);
 
 		component.add(contentPanel);
 		component.add(makeButton);
