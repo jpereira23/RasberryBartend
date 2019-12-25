@@ -13,17 +13,27 @@ public class GUIManager{
 	AlcoholMixerPage page2;
 	AlcoholMixerCreate page3;
 	DictateSlotsPage page4;
+	PleaseSelectDrinkPage page5;
+	CreateDrinkPage page6;
+	JPanel mainPage;
+	JPanel adminWizard;
+	JPanel alcoholMixerPage;
+	JPanel dictateSlotsPage;
+	JPanel pleaseSelectDrinkPage;
 	public GUIManager(){
 		page = new MainPage();
 		page1 = new AdminWizard();
 		page2 = new AlcoholMixerPage();
 		page3 = new AlcoholMixerCreate();
 		page4 = new DictateSlotsPage();
+		page5 = new PleaseSelectDrinkPage();
+		page6 = new CreateDrinkPage();
 		
-		JPanel mainPage = page.getContentPanel();
-		JPanel adminWizard = page1.getContentPanel();
-		JPanel alcoholMixerPage = page2.getContentPanel();
-		JPanel dictateSlotsPage = page4.getContentPanel();
+		mainPage = page.getContentPanel();
+		adminWizard = page1.getContentPanel();
+		alcoholMixerPage = page2.getContentPanel();
+		dictateSlotsPage = page4.getContentPanel();
+		pleaseSelectDrinkPage = page5.getContentPanel();
 		mainFrame = new JFrame("Bartending Robot");  
 		mainFrame.setBounds(0, 0, 800, 425);
 		mainFrame.add(mainPage);
@@ -32,23 +42,23 @@ public class GUIManager{
 		mainFrame.setVisible(true);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		setUpButtons();
 
-		page.adminButton.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				mainFrame.getContentPane().removeAll();
-				mainFrame.repaint();
-				mainFrame.add(adminWizard);
+		
+	}
 
-			}
-		});
+	private void refreshScreen(JPanel aPanel){
+		mainFrame.getContentPane().removeAll();
+		mainFrame.repaint();
+		mainFrame.add(aPanel);
+	}
 
-		page1.nextButton.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				mainFrame.getContentPane().removeAll();
-				mainFrame.repaint();
-				mainFrame.add(alcoholMixerPage);
-			}
-		});
+	private void setUpButtons(){
+		configureButton(page.adminButton, adminWizard);
+		configureButton(page1.nextButton, alcoholMixerPage);
+		configureButton(page2.makeButton, dictateSlotsPage);
+		configureButton(page4.doneButton, pleaseSelectDrinkPage);
+		configureButton(page5.doneButton, mainPage);
 
 		page2.createButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -56,11 +66,18 @@ public class GUIManager{
 			}
 		});
 
-		page2.makeButton.addActionListener(new ActionListener(){
+		page5.createButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				mainFrame.getContentPane().removeAll();
-				mainFrame.repaint();
-				mainFrame.add(dictateSlotsPage);
+				page6.displayPopUp();
+			}
+		});
+
+	}
+
+	private void configureButton(JButton button, JPanel thePanel){
+		button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				refreshScreen(thePanel);
 			}
 		});
 	}

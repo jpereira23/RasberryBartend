@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 
 public class DictateSlotsPage extends BartendPanel{
 	private JTable table;
-	private JButton doneButton;
+	public JButton doneButton;
 	public DictateSlotsPage(){
 		super("Dictate Slots");
 		doneButton = new JButton("Done");
