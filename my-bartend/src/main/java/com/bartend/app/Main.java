@@ -9,5 +9,6 @@ public class Main
     public static void main( String[] args )
     {
       GUIManager manager = new GUIManager();
+      MySQLConnection con = new MySQLConnection();
     }
 }

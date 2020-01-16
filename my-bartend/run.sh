@@ -1,3 +1,2 @@
 #!/bin/bash
-
-java -cp target/my-bartend-1.0-SNAPSHOT.jar com.bartend.app.Main
+mvn exec:java -Dexec.mainClass="com.bartend.app.Main"

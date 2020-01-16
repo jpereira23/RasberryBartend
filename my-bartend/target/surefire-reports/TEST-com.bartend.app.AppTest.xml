@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.bartend.app.AppTest" time="0.224" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.bartend.app.AppTest" time="0.19" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/test-classes:/home/pi/Desktop/RasberryBartend/my-bartend/target/classes:/home/pi/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/pi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/test-classes:/home/pi/Desktop/RasberryBartend/my-bartend/target/classes:/home/pi/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/pi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/pi/.m2/repository/org/mariadb/jdbc/mariadb-java-client/2.1.2/mariadb-java-client-2.1.2.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
@@ -16,8 +16,8 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.8.0_231/jre/lib/arm"/>
-    <property name="sun.java.command" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/surefire/surefirebooter8210773421465958090.jar /home/pi/Desktop/RasberryBartend/my-bartend/target/surefire 2020-01-12T15-17-48_369-jvmRun1 surefire1639680409266785769tmp surefire_05573725815631070328tmp"/>
-    <property name="surefire.test.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/test-classes:/home/pi/Desktop/RasberryBartend/my-bartend/target/classes:/home/pi/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/pi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.java.command" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/surefire/surefirebooter23414405211635382.jar /home/pi/Desktop/RasberryBartend/my-bartend/target/surefire 2020-01-15T16-28-18_730-jvmRun1 surefire4938447909758429695tmp surefire_03448234761373126221tmp"/>
+    <property name="surefire.test.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/test-classes:/home/pi/Desktop/RasberryBartend/my-bartend/target/classes:/home/pi/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/pi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/pi/.m2/repository/org/mariadb/jdbc/mariadb-java-client/2.1.2/mariadb-java-client-2.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/pi"/>
     <property name="user.language" value="en"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/surefire/surefirebooter8210773421465958090.jar"/>
+    <property name="surefire.real.class.path" value="/home/pi/Desktop/RasberryBartend/my-bartend/target/surefire/surefirebooter23414405211635382.jar"/>
     <property name="sun.boot.class.path" value="/usr/java/jdk1.8.0_231/jre/lib/resources.jar:/usr/java/jdk1.8.0_231/jre/lib/rt.jar:/usr/java/jdk1.8.0_231/jre/lib/sunrsasign.jar:/usr/java/jdk1.8.0_231/jre/lib/jsse.jar:/usr/java/jdk1.8.0_231/jre/lib/jce.jar:/usr/java/jdk1.8.0_231/jre/lib/charsets.jar:/usr/java/jdk1.8.0_231/jre/lib/jfr.jar:/usr/java/jdk1.8.0_231/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="java.runtime.version" value="1.8.0_231-b11"/>
@@ -58,5 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.bartend.app.AppTest" time="0.011"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.bartend.app.AppTest" time="0.012"/>
 </testsuite>
