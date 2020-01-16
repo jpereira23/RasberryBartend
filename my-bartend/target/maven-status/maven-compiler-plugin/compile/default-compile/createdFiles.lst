@@ -9,6 +9,7 @@ com/bartend/app/AlcoholMixerPage.class
 com/bartend/app/AlcoholMixerCreate.class
 com/bartend/app/Main.class
 com/bartend/app/MainPage.class
+com/bartend/app/MySQLConnectionDelegate.class
 com/bartend/app/AdminWizard.class
 com/bartend/app/GUIManager$3.class
 com/bartend/app/GUIManager.class

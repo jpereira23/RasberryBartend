@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.event.*; 
 import java.net.*; 
 import java.io.*; 
+
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.*; 
 
 public class AlcoholMixerCreate{
@@ -11,8 +14,9 @@ public class AlcoholMixerCreate{
   private JButton doneButton; 
   private JLabel nameLabel; 
   private JTextField nameField; 
-
+  private MySQLConnection con; 
   public AlcoholMixerCreate(){
+    con = new MySQLConnection();
     doneButton = new JButton("Done"); 
     doneButton.setBounds(50, 300, 100, 50); 
 
@@ -30,14 +34,17 @@ public class AlcoholMixerCreate{
     mainFrame.setLayout(null); 
   }
 
-  public void displayPopUp(){
+  public void displayPopUp(final MySQLConnection aCon){
     mainFrame.setVisible(true); 
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
     
     doneButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e){
         mainFrame.dispose();
+        con.addMixerAlcohol(nameField.getText(), aCon);
+        
       }
     });
   }
+
 }

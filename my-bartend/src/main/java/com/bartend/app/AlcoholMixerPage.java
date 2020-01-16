@@ -5,17 +5,29 @@ import java.awt.event.*;
 import java.net.*; 
 import java.io.*;
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class AlcoholMixerPage extends BartendPanel{
+
+interface MySQLConnectionDelegate{
+  void alcoholMixerData(Object[] array);
+}
+public class AlcoholMixerPage extends BartendPanel implements MySQLConnectionDelegate{
   private JLabel headerLabel;
   private JTable table; 
   public JButton makeButton; 
   public JButton createButton; 
+  MySQLConnection con;
+  private DefaultTableModel model;
   public AlcoholMixerPage(){
     super("Please select Alcohol/Mixer");
-  
+    model = new DefaultTableModel();
+
+    con = new MySQLConnection();
+    con.delegate = this;
+
     makeButton = new JButton("Make");
     makeButton.setBounds(100, 365, 100, 50);
     
@@ -23,7 +35,7 @@ public class AlcoholMixerPage extends BartendPanel{
     createButton.setBounds(400, 365, 100, 50); 
 
     createTable(); 
-
+    con.getAlcoholMixers();
     JScrollPane contentPanel = new JScrollPane(table); 
     contentPanel.setBounds(0, 50, 800, 315); 
     
@@ -34,11 +46,29 @@ public class AlcoholMixerPage extends BartendPanel{
 
   private void createTable()
   {
-    DefaultTableModel model = new DefaultTableModel();
     model.addColumn("Mixer/Alcohol Name"); 
     
     table = new JTable(model); 
     table.getColumnModel().getColumn(0).setPreferredWidth(300); 
     table.setBounds(0, 0, 800, 330); 
+  }
+
+
+  @Override
+  public void alcoholMixerData(Object[] array){
+    if(model.getRowCount() < array.length){
+      if((array.length - model.getRowCount()) == 1){
+        String aString = array[array.length-1].toString();
+        model.addRow(new Object[]{aString});
+      } else {
+        for(int i = 0; i < array.length; i++) 
+        {
+          String aString = array[i].toString();
+          System.out.println(aString);
+          model.addRow(new Object[]{aString});
+        }
+      }
+    }
+    model.fireTableDataChanged();
   }
 }

@@ -1,19 +1,44 @@
 package com.bartend.app;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLConnection{
+  Connection con;
+  MySQLConnectionDelegate delegate;
   public MySQLConnection(){
     try{
-      Connection con = DriverManager.getConnection("jdbc:mariadb://localhost/alcoholmixer", "root", "password");
-      Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("select * from alcoholMixer");
-      while(rs.next()){
-        System.out.println(rs.getString(1));
-      }
-      con.close();
+      con = DriverManager.getConnection("jdbc:mariadb://localhost/alcoholmixer", "root", "password");
     } catch(Exception e){
       System.out.println(e);
     }
+  }
+
+  public void addMixerAlcohol(String mixer, MySQLConnection aCon){
+    try{
+      Statement stmt = con.createStatement();
+      ResultSet rs = stmt.executeQuery("INSERT INTO alcoholMixer(drinkName) VALUES ('" + mixer + "')");
+      aCon.getAlcoholMixers();
+    } catch (Exception e){
+      System.out.println(e);
+    }
+  }
+
+
+  public void getAlcoholMixers(){
+    try{
+      Statement stmt = con.createStatement();
+      ResultSet rs = stmt.executeQuery("SELECT * FROM alcoholMixer");
+      List<String> array = new ArrayList<>();
+      while(rs.next()){
+        array.add(rs.getString(1));
+      }
+      
+      delegate.alcoholMixerData(array.toArray());
+    } catch (Exception e){
+      System.out.println(e);
+    }
+    
   }
 }

@@ -64,7 +64,7 @@ public class GUIManager{
 
 		page2.createButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				page3.displayPopUp();
+				page3.displayPopUp(page2.con);
 			}
 		});
 
