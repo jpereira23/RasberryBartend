@@ -7,13 +7,18 @@ import java.io.*;
 import javax.swing.*; 
 import javax.swing.table.*; 
 import javax.swing.JScrollPane;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DictateSlotsPage extends BartendPanel{
+public class DictateSlotsPage extends BartendPanel implements MySQLConnectionDelegate{
   private JTable table; 
   public JButton doneButton;
+  private JComboBox comboBox;
+  private MySQLConnection con;
   public DictateSlotsPage(){
     super("Dictate Slots Page"); 
-    
+    con = new MySQLConnection();
+    con.delegate = this;
     doneButton = new JButton("Done"); 
     doneButton.setBounds(340, 365, 100, 50); 
     
@@ -47,17 +52,22 @@ public class DictateSlotsPage extends BartendPanel{
   }
 
   private void setUpAlcMixerColumn(JTable table, TableColumn alcMixer){
-    JComboBox comboBox = new JComboBox();
-    
-    comboBox.addItem("Honey Badger"); 
-    comboBox.addItem("King Blues Tonic"); 
-    comboBox.addItem("Bettys Ecstasy"); 
-    
+    comboBox = new JComboBox();
+    con.getAlcoholMixers();
     alcMixer.setCellEditor(new DefaultCellEditor(comboBox)); 
 
     DefaultTableCellRenderer renderer = new DefaultTableCellRenderer(); 
     renderer.setToolTipText("Click For Combo Box"); 
     alcMixer.setCellRenderer(renderer); 
+  }
+
+  @Override
+  public void alcoholMixerData(Object[] array){
+        for(int i = 0; i < array.length; i++) 
+        {
+          String aString = array[i].toString();
+          comboBox.addItem(aString);
+        }
   }
     
 }
