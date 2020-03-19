@@ -61,7 +61,12 @@ public class GUIManager{
 		configureButton(page2.makeButton, dictateSlotsPage);
 		configureButton(page4.doneButton, pleaseSelectDrinkPage);
 		configureButton(page5.doneButton, mainPage);
-
+    page4.doneButton.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        page4.getUpdatedChanges();
+        refreshScreen(pleaseSelectDrinkPage);
+      }
+    });
 		page2.createButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				page3.displayPopUp(page2.con);

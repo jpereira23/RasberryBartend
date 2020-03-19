@@ -13,6 +13,7 @@ import javax.swing.table.*;
 
 interface MySQLConnectionDelegate{
   void alcoholMixerData(Object[] array);
+  void slotsData(Object[] array);
 }
 public class AlcoholMixerPage extends BartendPanel implements MySQLConnectionDelegate{
   private JLabel headerLabel;
@@ -58,17 +59,23 @@ public class AlcoholMixerPage extends BartendPanel implements MySQLConnectionDel
   public void alcoholMixerData(Object[] array){
     if(model.getRowCount() < array.length){
       if((array.length - model.getRowCount()) == 1){
-        String aString = array[array.length-1].toString();
+        Slot s = (Slot)array[array.length-1];
+        String aString = s.getDrinkName();
         model.addRow(new Object[]{aString});
       } else {
         for(int i = 0; i < array.length; i++) 
         {
-          String aString = array[i].toString();
-          System.out.println(aString);
+          Slot s = (Slot)array[i];
+          String aString = s.getDrinkName();
           model.addRow(new Object[]{aString});
         }
       }
     }
     model.fireTableDataChanged();
   }
+
+  @Override
+  public void slotsData(Object[] array){
+
+  } 
 }
