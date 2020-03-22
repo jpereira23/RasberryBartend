@@ -25,8 +25,6 @@ public class DictateSlotsPage extends BartendPanel implements MySQLConnectionDel
     doneButton = new JButton("Done"); 
     doneButton.setBounds(340, 365, 100, 50); 
    
-    //createTable(); 
-  
     con.getSlots(); 
     component.add(doneButton); 
   }

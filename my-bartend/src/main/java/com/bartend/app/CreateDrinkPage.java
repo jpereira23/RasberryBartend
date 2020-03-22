@@ -6,10 +6,13 @@ import java.net.*;
 import java.io.*;
 import javax.swing.*;
 import javax.swing.table.*; 
+import java.util.List; 
+import java.util.ArrayList;
 
 
 public class CreateDrinkPage{
-	private JTable table;
+	//private JTable table;
+  private CreateDrinkTable table;
 	private JFrame mainFrame;
 	public JButton doneButton;
 	private JButton addButton;
@@ -29,13 +32,23 @@ public class CreateDrinkPage{
 		nameField.setBounds(50, 60, 100, 50); 
 		headerLabel = new JLabel("Enter Name"); 
 		headerLabel.setBounds(50, 5, 100, 50);
-		createTable();
+		//createTable();
+    List mixers = new ArrayList();
+    mixers.add("Drink 1"); 
+    mixers.add("Drink 2");
+
+    CreateDrinkTableModel model = new CreateDrinkTableModel(mixers);
+
+    table = new CreateDrinkTable(model);
+    table.setDefaultRenderer(Object.class, new CreateDrinkTableCellRenderer());
+    table.setDefaultEditor(Object.class, new CreateDrinkCellEditor());
+    table.setRowHeight(60);
 		JScrollPane contentPanel = new JScrollPane(table);
-		contentPanel.setBounds(0, 175, 200, 190); 
+		contentPanel.setBounds(0, 175, 300, 190); 
 
 
 		mainFrame = new JFrame(); 
-		mainFrame.setBounds(300, 25, 200, 430);
+		mainFrame.setBounds(300, 25, 300, 430);
 
 		mainFrame.add(doneButton); 
 		mainFrame.add(nameField);
@@ -60,6 +73,7 @@ public class CreateDrinkPage{
 	}
 
 	private void createTable(){
+    /*
 		final DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Mixer/Alcohol"); 
 
@@ -75,10 +89,11 @@ public class CreateDrinkPage{
 		table.getColumnModel().getColumn(0).setPreferredWidth(300);
 		setUpAlcMixerColumn(table, table.getColumnModel().getColumn(0));
 		table.setBounds(0, 0, 300, 200);
+    */
 	}
 
 	private void setUpAlcMixerColumn(JTable table, TableColumn alcMixer){
-		
+	  /*	
 		JComboBox comboBox = new JComboBox();
 		comboBox.addItem("Honey Badger");
 		comboBox.addItem("King Blues Tonic");
@@ -89,7 +104,7 @@ public class CreateDrinkPage{
 		DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
 		renderer.setToolTipText("Click For Combo Box");
 		alcMixer.setCellRenderer(renderer);
-	
+	  */
 	}
 
 
