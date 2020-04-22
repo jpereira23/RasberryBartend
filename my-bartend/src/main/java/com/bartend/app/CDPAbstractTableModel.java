@@ -33,6 +33,19 @@ public class CDPAbstractTableModel extends AbstractTableModel{
     fireTableDataChanged();
   }
 
+  public Class getColumnClass(int col){
+    switch(col){
+      case 0:
+        return JButton.class; 
+      case 1: 
+        return Integer.class;
+      case 2: 
+        return String.class;
+      default: 
+        return null;
+    }
+  }
+
   public String getColumnName(int col){
     switch(col){
       case 0: 
@@ -45,6 +58,8 @@ public class CDPAbstractTableModel extends AbstractTableModel{
         return "";
     }
   }
+  
+  public boolean isCellEditable(int row, int col) { return true; }
 
   
 

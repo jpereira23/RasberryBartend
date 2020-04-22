@@ -58,6 +58,8 @@ public class CDPPanel2 implements ItemListener{
     List<AlcMixer> ams = new ArrayList<>(); 
     tableModel = new CDPAbstractTableModel(ams);
     table = new JTable(tableModel); 
+    table.setDefaultRenderer(JButton.class, new CDPAbstractTableRenderer());
+    //table.setDefaultEditor(JButton.class, new CDPAbstractTableEditor());
     somePane = new JScrollPane(table);
     doneEditing = new JButton("Add"); 
 

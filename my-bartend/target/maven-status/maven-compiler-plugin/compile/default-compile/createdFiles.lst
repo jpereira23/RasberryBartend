@@ -1,4 +1,5 @@
 com/bartend/app/AlcMixer.class
+com/bartend/app/CDPAbstractTableRenderer.class
 com/bartend/app/DictateSlotsPage$1.class
 com/bartend/app/GUIManager$1.class
 com/bartend/app/CreateDrinkPage$5.class
@@ -28,4 +29,5 @@ com/bartend/app/GUIManager$3.class
 com/bartend/app/AdminWizard.class
 com/bartend/app/GUIManager.class
 com/bartend/app/CDPAbstractTableModel.class
+com/bartend/app/CDPAbstractTableRenderer$1.class
 com/bartend/app/CreateDrinkPage$4.class
