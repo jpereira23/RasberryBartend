@@ -17,6 +17,7 @@ public class GUIManager{
 	DictateSlotsPage page4;
 	PleaseSelectDrinkPage page5;
 	CreateDrinkPage page6;
+  CDPPanel1 page7;
 	JPanel mainPage;
 	JPanel adminWizard;
 	JPanel alcoholMixerPage;
