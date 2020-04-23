@@ -11,7 +11,7 @@ public class MySQLConnection{
   public List<Integer> slotArray1;
   public MySQLConnection(){
     try{
-      con = DriverManager.getConnection("jdbc:mariadb://10.0.0.6/alcoholmixer", "root", "password");
+      con = DriverManager.getConnection("jdbc:mariadb://localhost/alcoholmixer", "root", "password");
     } catch(Exception e){
       System.out.println(e);
     }
