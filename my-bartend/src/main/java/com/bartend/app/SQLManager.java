@@ -29,6 +29,45 @@ public class SQLManager{
     }
   }
 
+  public AlcMixer[] getAlcMixers(int drinkId){
+    try{
+      Connection con = DriverManager.getConnection(connectionString, username, password); 
+      Statement stmt = con.createStatement(); 
+      ResultSet rs = stmt.executeQuery("SELECT alcMixerId, percentage FROM DRINKS_MAPPING WHERE drinkId = " + drinkId); 
+
+      ArrayList<AlcMixer> tmp = new ArrayList<>();
+      while(rs.next()){
+        int alcMixerId = rs.getInt(1); 
+        int percentage = rs.getInt(2); 
+
+        String drinkName = getAlcMixerDrinkName(alcMixerId); 
+        AlcMixer alc = new AlcMixer(drinkName, percentage);
+        tmp.add(alc);
+      }   
+
+      AlcMixer[] alcMixerList = new AlcMixer[tmp.size()]; 
+      tmp.toArray(alcMixerList); 
+      return alcMixerList;
+    } catch(Exception e){
+      System.out.println(e); 
+      return null;
+    }    
+  }
+
+  public String getAlcMixerDrinkName(int alcMixerId){
+    try{
+      Connection con = DriverManager.getConnection(connectionString, username, password); 
+      Statement stmt = con.createStatement(); 
+      ResultSet rs = stmt.executeQuery("SELECT drinkName FROM alcoholMixer WHERE id = " + alcMixerId);
+
+      rs.next(); 
+      return rs.getString(1); 
+    } catch(Exception e){
+      System.out.println(e); 
+      return null;
+    }
+  }
+
   public String[] getDrinks(){
     try{
       Connection con = DriverManager.getConnection(connectionString, username, password);

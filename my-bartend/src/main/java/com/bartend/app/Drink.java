@@ -15,6 +15,12 @@ public class Drink{
     am = alc;
   }
 
+  public Drink(String aDrink){
+    drinkName = aDrink;
+    int drinkId = new SQLManager().getDrinkID(drinkName); 
+    am = new SQLManager().getAlcMixers(drinkId);   
+  }
+
   public void shipOffToDatabase(){
     SQLManager sql = new SQLManager(); 
     sql.createDrink(drinkName); 
@@ -25,5 +31,15 @@ public class Drink{
       sql.addAlcoholMixerToDrink(am[i].getPercentage(), alcoholMixerID, drinkNameId);
     }
     
+  }
+
+  public String alcMixerString(){
+    String aString = ""; 
+    
+    for(int i = 0; i < am.length; i++){
+      aString = aString + am[i].getDrinkName() + " "; 
+    }
+
+    return aString;
   }
 }

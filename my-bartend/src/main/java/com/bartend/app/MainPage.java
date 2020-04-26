@@ -26,7 +26,9 @@ public class MainPage extends BartendPanel
     makeButton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent ae){
         int rowNum = table.getSelectedRow();
-        JOptionPane.showMessageDialog(component, drinks[rowNum]);
+        Drink drink = new Drink(drinks[rowNum]); 
+        String tmpString = drink.alcMixerString();
+        JOptionPane.showMessageDialog(component, drinks[rowNum] + " " + tmpString);
       }
     });
     createTable();
