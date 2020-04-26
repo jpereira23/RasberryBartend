@@ -1,3 +1,5 @@
+package com.bartend.app;
+
 import java.awt.*;
 import java.awt.event.*; 
 import javax.swing.*;
@@ -26,7 +28,6 @@ public class GPIO {
    private GpioPinDigitalInput irSensor;    
    private GpioPinDigitalOutput[] GpioArray;
    private Boolean isBusy;
-   public RobotDelegate delegate;
    public Boolean isIR;
    public Boolean breakLoop;
 
