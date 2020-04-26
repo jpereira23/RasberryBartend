@@ -35,9 +35,15 @@ public class MainPage extends BartendPanel
   {
     DefaultTableModel model = new DefaultTableModel();
     model.addColumn("Drink Name");
-    
+    String[] drinks = new SQLManager().getDrinks(); 
+
     table = new JTable(model);
     table.getColumnModel().getColumn(0).setPreferredWidth(300);
     table.setBounds(0, 0, 300, 200);
+  
+    for(int i = 0; i < drinks.length; i++){
+      model.addRow(new Object[]{drinks[i]});
+    }
+    
   }
 }
