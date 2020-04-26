@@ -33,5 +33,6 @@ com/bartend/app/GUIManager$3.class
 com/bartend/app/AdminWizard.class
 com/bartend/app/GUIManager.class
 com/bartend/app/CDPAbstractTableModel.class
+com/bartend/app/MainPage$1.class
 com/bartend/app/AlcoholMixer.class
 com/bartend/app/CreateDrinkPage$4.class

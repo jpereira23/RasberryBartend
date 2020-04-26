@@ -8,11 +8,13 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.JScrollPane;
 
+
 public class MainPage extends BartendPanel
 {
   private JTable table; 
   private JButton makeButton;
   public JButton adminButton;
+  private String[] drinks;
   public MainPage()
   {
     super("Please Select Drink");
@@ -21,6 +23,12 @@ public class MainPage extends BartendPanel
     adminButton = new JButton("Admin");
     adminButton.setBounds(600, 0, 200, 50);
     
+    makeButton.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent ae){
+        int rowNum = table.getSelectedRow();
+        JOptionPane.showMessageDialog(component, drinks[rowNum]);
+      }
+    });
     createTable();
     
     JScrollPane contentPanel = new JScrollPane(table);
@@ -35,7 +43,7 @@ public class MainPage extends BartendPanel
   {
     DefaultTableModel model = new DefaultTableModel();
     model.addColumn("Drink Name");
-    String[] drinks = new SQLManager().getDrinks(); 
+    drinks = new SQLManager().getDrinks(); 
 
     table = new JTable(model);
     table.getColumnModel().getColumn(0).setPreferredWidth(300);
