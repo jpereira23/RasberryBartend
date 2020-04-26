@@ -13,11 +13,13 @@ public class MainPage extends BartendPanel
 {
   private JTable table; 
   private JButton makeButton;
+  private GPIO gpio; 
   public JButton adminButton;
   private String[] drinks;
   public MainPage()
   {
     super("Please Select Drink");
+    GPIO gpio = new GPIO();
     makeButton = new JButton("Make");
     makeButton.setBounds(340, 365, 100, 50);
     adminButton = new JButton("Admin");

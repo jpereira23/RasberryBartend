@@ -5,8 +5,7 @@ import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.*;
 
-
- public class Robot {
+public class GPIO {
    private GpioController gpio; 
    private GpioPinDigitalOutput pump1;
    private GpioPinDigitalOutput pump2;
@@ -33,7 +32,7 @@ import com.pi4j.io.gpio.*;
 
    
 
-   public Robot(){
+   public GPIO(){
      gpio = GpioFactory.getInstance();
      pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "My Led", PinState.HIGH);
      pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "My Led", PinState.HIGH);
@@ -54,7 +53,6 @@ import com.pi4j.io.gpio.*;
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
-     /*
      pump1.setShutdownOptions(true, PinState.HIGH);
      pump2.setShutdownOptions(true, PinState.LOW);
      pump3.setShutdownOptions(true, PinState.LOW);
@@ -71,12 +69,7 @@ import com.pi4j.io.gpio.*;
      pump14.setShutdownOptions(true, PinState.LOW);
      pump15.setShutdownOptions(true, PinState.LOW);
      pump16.setShutdownOptions(true, PinState.LOW);
-     */
-
-     this.isBusy = true;
-     isIR = false;
-     breakLoop = false;
-     
+     /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
             public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
@@ -100,21 +93,17 @@ import com.pi4j.io.gpio.*;
         });
       
 
-
+    */
    }
-
+    /*
     public void makeDrink(int[] a){
       this.isBusy = true;
-      /*
       if(isIR == false){
-        */
         
-          /*
           outerloop:
           if(breakLoop == true){
             break outerloop;
           }
-          */
           try{
             for(int i = 0; i < 15; i++){
               GpioArray[i].low();
@@ -132,6 +121,7 @@ import com.pi4j.io.gpio.*;
       //}
       //breakLoop = false;
   }
+    */
 
   public void setAllLow(){
     isIR = true;
