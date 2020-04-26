@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 
 public class PleaseSelectDrinkPage extends BartendPanel{
 	private JTable table;
+  private DefaultTableModel model;
 	public JButton doneButton;
 	public JButton createButton;
 	public PleaseSelectDrinkPage(){
@@ -20,7 +21,7 @@ public class PleaseSelectDrinkPage extends BartendPanel{
 		createButton.setBounds(340, 365, 100, 50);
 		doneButton = new JButton("Done");
 		doneButton.setBounds(500, 365, 100, 50);
-
+    model = new DefaultTableModel();
 		createTable();
 
 
@@ -33,12 +34,21 @@ public class PleaseSelectDrinkPage extends BartendPanel{
 		component.add(doneButton);
 	}
 
+  public DefaultTableModel getTableModel(){
+    return model;
+  }
+
 	private void createTable(){
-		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Drink Name"); 
 
 		table = new JTable(model);
 		table.getColumnModel().getColumn(0).setPreferredWidth(300);
 		table.setBounds(0, 0, 300, 200);
+
+    String[] drinks = new SQLManager().getDrinks();
+
+    for(int i = 0; i < drinks.length; i++){
+      model.addRow(new Object[]{drinks[i]});
+    }
 	}
 }

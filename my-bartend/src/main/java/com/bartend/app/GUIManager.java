@@ -76,7 +76,8 @@ public class GUIManager{
 
 		page5.createButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				page6.displayPopUp();
+        
+				page6.displayPopUp(page5.getTableModel());
 			}
 		});
 

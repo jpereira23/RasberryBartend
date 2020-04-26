@@ -16,6 +16,7 @@ public class CreateDrinkPage{
 	public JButton doneButton;
   public CDPPanel1 panel1;
   public CDPPanel2 panel2;
+  public DefaultTableModel parentTableModel;
 	public CreateDrinkPage(){
     panel1 = new CDPPanel1();
     panel2 = new CDPPanel2();
@@ -28,7 +29,9 @@ public class CreateDrinkPage{
 
 	}
 
-  public void displayPopUp(){
+  public void displayPopUp(DefaultTableModel tmpModel){
+    
+    parentTableModel = tmpModel;
     mainFrame.setVisible(true);
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.setLayout(null);
@@ -64,6 +67,8 @@ public class CreateDrinkPage{
 
     panel2.done.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e){
+        panel2.addToDatabase();
+        parentTableModel.addRow(new Object[]{panel2.getDrinkName()});
         mainFrame.dispose();
       }
     });

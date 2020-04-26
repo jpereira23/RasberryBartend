@@ -17,12 +17,28 @@ public class CDPAbstractTableModel extends AbstractTableModel{
 
   public int getRowCount() { return alcoholMixers.size(); }
   public int getColumnCount() { return 3; }
+
+  public AlcMixer[] getData(){
+    AlcMixer[] amArray = new AlcMixer[alcoholMixers.size()];
+    alcoholMixers.toArray(amArray);
+    return amArray;
+  }
   
-  public Object getValueAt(int row, int col){
+  public Object getValueAt(final int row, int col){
     if(col == 1){
       return alcoholMixers.get(row).getPercentage();
     } else if(col == 2){
       return alcoholMixers.get(row).getDrinkName();
+    } else if(col == 0){
+      JButton button = new JButton("Remove");
+      button.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent ae){
+          System.out.println(row);
+          alcoholMixers.remove(row);
+          fireTableRowsDeleted(row, row);
+        }
+      });
+      return button;
     }
 
     return null;
@@ -49,7 +65,7 @@ public class CDPAbstractTableModel extends AbstractTableModel{
   public String getColumnName(int col){
     switch(col){
       case 0: 
-        return "Edit?";
+        return "Remove";
       case 1: 
         return "Percentage";
       case 2: 

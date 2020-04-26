@@ -1,4 +1,5 @@
 com/bartend/app/AlcMixer.class
+com/bartend/app/CDPAbstractTableModel$1.class
 com/bartend/app/CDPAbstractTableRenderer.class
 com/bartend/app/DictateSlotsPage$1.class
 com/bartend/app/GUIManager$1.class
@@ -8,6 +9,7 @@ com/bartend/app/GUIManager$4.class
 com/bartend/app/CreateDrinkPage$2.class
 com/bartend/app/Slot.class
 com/bartend/app/BartendPanel.class
+com/bartend/app/CDPButtonMouseListener.class
 com/bartend/app/AlcoholMixerPage.class
 com/bartend/app/Main.class
 com/bartend/app/MainPage.class
@@ -17,10 +19,12 @@ com/bartend/app/CreateDrinkPage.class
 com/bartend/app/GUIManager$2.class
 com/bartend/app/CDPPanel2.class
 AdminTableComboBox.class
+com/bartend/app/Drink.class
 com/bartend/app/CDPPanel2$1.class
 com/bartend/app/DictateSlotsPage$2.class
 com/bartend/app/AlcoholMixerCreate$1.class
 com/bartend/app/CreateDrinkPage$1.class
+com/bartend/app/SQLManager.class
 com/bartend/app/PleaseSelectDrinkPage.class
 com/bartend/app/MySQLConnection.class
 com/bartend/app/AlcoholMixerCreate.class
@@ -29,5 +33,5 @@ com/bartend/app/GUIManager$3.class
 com/bartend/app/AdminWizard.class
 com/bartend/app/GUIManager.class
 com/bartend/app/CDPAbstractTableModel.class
-com/bartend/app/CDPAbstractTableRenderer$1.class
+com/bartend/app/AlcoholMixer.class
 com/bartend/app/CreateDrinkPage$4.class

@@ -17,6 +17,7 @@ public class CDPPanel2 implements ItemListener{
   private JSlider percentage; 
   private JTable table; 
   private JButton doneEditing; 
+  private String drinkNameString;
   public JButton done; 
   public JButton prev; 
   private JScrollPane somePane;
@@ -28,7 +29,9 @@ public class CDPPanel2 implements ItemListener{
     aNum = 0;
     component.setBounds(0, 0, 350, 400);
     component.setLayout(null);    
-    String[] itemList = {"Coke", "Sprite", "Lemonade"};
+
+    String[] itemList = new SQLManager().getIDOne();
+    //System.out.println(testOne);
 
     drinkName = new JLabel("Some Drink"); 
 
@@ -59,7 +62,9 @@ public class CDPPanel2 implements ItemListener{
     tableModel = new CDPAbstractTableModel(ams);
     table = new JTable(tableModel); 
     table.setDefaultRenderer(JButton.class, new CDPAbstractTableRenderer());
+    table.addMouseListener(new CDPButtonMouseListener(table));
     //table.setDefaultEditor(JButton.class, new CDPAbstractTableEditor());
+    //CDPButtonMouseListener buttonMouseListener = new CDPButtonMouseListener(table);
     somePane = new JScrollPane(table);
     doneEditing = new JButton("Add"); 
 
@@ -92,6 +97,7 @@ public class CDPPanel2 implements ItemListener{
 
   public void setDrinkValue(String value){
     drinkName.setText(value);
+    drinkNameString = value;
   }
 
   private void setBoundsForComponents(){
@@ -102,6 +108,16 @@ public class CDPPanel2 implements ItemListener{
     somePane.setBounds(40, 150, 220, 200);
     done.setBounds(225, 360, 50, 20); 
     prev.setBounds(40, 360, 50, 20);
+  }
+
+  public String getDrinkName(){
+    return drinkNameString;
+  }
+
+  public void addToDatabase(){
+    AlcMixer[] am = tableModel.getData();    
+    Drink newDrink = new Drink(drinkNameString, am);
+    newDrink.shipOffToDatabase(); 
   }
 
 }
