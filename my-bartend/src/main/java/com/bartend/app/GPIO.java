@@ -43,7 +43,7 @@ public class GPIO {
      pump6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "My Led", PinState.HIGH);
      pump7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "My Led", PinState.HIGH);
      pump8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "My Led", PinState.HIGH);
-     pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31, "My Led", PinState.HIGH);
+     //pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31, "My Led", PinState.HIGH);
      pump10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "My Led", PinState.HIGH);
      pump11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "My Led", PinState.HIGH);
      pump12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "My Led", PinState.HIGH);
