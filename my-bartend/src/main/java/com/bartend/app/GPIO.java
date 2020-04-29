@@ -62,14 +62,14 @@ public class GPIO {
      pump6.setShutdownOptions(true, PinState.LOW);
      pump7.setShutdownOptions(true, PinState.LOW);
      pump8.setShutdownOptions(true, PinState.LOW);
-     //pump9.setShutdownOptions(true, PinState.LOW);
+     pump9.setShutdownOptions(true, PinState.LOW);
      pump10.setShutdownOptions(true, PinState.LOW);
      pump11.setShutdownOptions(true, PinState.LOW);
      pump12.setShutdownOptions(true, PinState.LOW);
      pump13.setShutdownOptions(true, PinState.LOW);
      pump14.setShutdownOptions(true, PinState.LOW);
      pump15.setShutdownOptions(true, PinState.LOW);
-     //pump16.setShutdownOptions(true, PinState.LOW);
+     pump16.setShutdownOptions(true, PinState.LOW);
      /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
@@ -95,34 +95,19 @@ public class GPIO {
       
 
     */
-   }
-    /*
-    public void makeDrink(int[] a){
-      this.isBusy = true;
-      if(isIR == false){
-        
-          outerloop:
-          if(breakLoop == true){
-            break outerloop;
-          }
-          try{
-            for(int i = 0; i < 15; i++){
-              GpioArray[i].low();
-              Thread.sleep(a[i]*1000);
-              GpioArray[i].high();
-            }
-            //this.isBusy = false;
-
-          } catch (InterruptedException error){
-            System.out.println("Error");
-          }
-
-        
-
-      //}
-      //breakLoop = false;
+    makeDrink();
+   }  
+  public void makeDrink(){
+    try{
+      for(int i = 0; i < 15; i++){
+        GpioArray[i].high();
+        Thread.sleep(1000);
+        GpioArray[i].low();
+      }
+    } catch (InterruptedException error){
+      System.out.println("Error");
+    }
   }
-    */
 
   public void setAllLow(){
     isIR = true;
