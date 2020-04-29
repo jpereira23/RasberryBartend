@@ -107,15 +107,6 @@ public class GPIO {
         Thread.sleep(100*am[i].getPercentage());
         GpioArray[am[i].getSlot()].high();
       }
-      /*
-      for(int i = 0; i < 15; i++){
-        GpioArray[i].high();
-        if(i == index || i == index1){
-          Thread.sleep(1000);
-        }
-        GpioArray[i].low();
-      }
-      */
     } catch (InterruptedException error){
       System.out.println("Error");
     }
