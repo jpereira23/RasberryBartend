@@ -70,7 +70,11 @@ public class GPIO {
      pump14.setShutdownOptions(true, PinState.HIGH);
      pump15.setShutdownOptions(true, PinState.HIGH);
      pump16.setShutdownOptions(true, PinState.HIGH);
-     /*
+
+     for(int i = 0; i < 16; i++){
+       GpioArray[i].high();
+     }
+    /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
             public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
