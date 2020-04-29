@@ -62,14 +62,14 @@ public class GPIO {
      pump6.setShutdownOptions(true, PinState.LOW);
      pump7.setShutdownOptions(true, PinState.LOW);
      pump8.setShutdownOptions(true, PinState.LOW);
-     pump9.setShutdownOptions(true, PinState.LOW);
+     //pump9.setShutdownOptions(true, PinState.LOW);
      pump10.setShutdownOptions(true, PinState.LOW);
      pump11.setShutdownOptions(true, PinState.LOW);
      pump12.setShutdownOptions(true, PinState.LOW);
      pump13.setShutdownOptions(true, PinState.LOW);
      pump14.setShutdownOptions(true, PinState.LOW);
      pump15.setShutdownOptions(true, PinState.LOW);
-     pump16.setShutdownOptions(true, PinState.LOW);
+     //pump16.setShutdownOptions(true, PinState.LOW);
      /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
