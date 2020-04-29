@@ -95,13 +95,16 @@ public class GPIO {
       
 
     */
-    makeDrink();
+    makeDrink(2, 1000);
+    makeDrink(3, 1000);
    }  
-  public void makeDrink(){
+  public void makeDrink(int index, int time){
     try{
       for(int i = 0; i < 15; i++){
         GpioArray[i].high();
-        Thread.sleep(1000);
+        if(i == index){
+          Thread.sleep(time);
+        }
         GpioArray[i].low();
       }
     } catch (InterruptedException error){
