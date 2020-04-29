@@ -72,7 +72,7 @@ public class GPIO {
      pump16.setShutdownOptions(true, PinState.HIGH);
 
      for(int i = 0; i < 16; i++){
-       GpioArray[i].high();
+       GpioArray[i].low();
      }
     /*
      irSensor.addListener(new GpioPinListenerDigital() {
