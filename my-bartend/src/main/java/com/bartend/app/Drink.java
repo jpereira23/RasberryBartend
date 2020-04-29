@@ -33,13 +33,8 @@ public class Drink{
     
   }
 
-  public String alcMixerString(){
-    String aString = ""; 
-    
-    for(int i = 0; i < am.length; i++){
-      aString = aString + am[i].getDrinkName() + " "; 
-    }
+  public AlcMixer[] getAlcoholMixer(){
+    return am;
+  } 
 
-    return aString;
-  }
 }

@@ -13,13 +13,13 @@ public class MainPage extends BartendPanel
 {
   private JTable table; 
   private JButton makeButton;
-  private GPIO gpio; 
+  final private GPIO gpio; 
   public JButton adminButton;
   private String[] drinks;
   public MainPage()
   {
     super("Please Select Drink");
-    GPIO gpio = new GPIO();
+    gpio = new GPIO();
     makeButton = new JButton("Make");
     makeButton.setBounds(340, 365, 100, 50);
     adminButton = new JButton("Admin");
@@ -29,8 +29,9 @@ public class MainPage extends BartendPanel
       public void actionPerformed(ActionEvent ae){
         int rowNum = table.getSelectedRow();
         Drink drink = new Drink(drinks[rowNum]); 
-        String tmpString = drink.alcMixerString();
-        JOptionPane.showMessageDialog(component, drinks[rowNum] + " " + tmpString);
+        gpio.makeDrink(drink.getAlcoholMixer());
+        //String tmpString = drink.alcMixerString();
+        //JOptionPane.showMessageDialog(component, drinks[rowNum] + " " + tmpString);
       }
     });
     createTable();

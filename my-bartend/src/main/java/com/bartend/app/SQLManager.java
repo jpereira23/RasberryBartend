@@ -39,9 +39,9 @@ public class SQLManager{
       while(rs.next()){
         int alcMixerId = rs.getInt(1); 
         int percentage = rs.getInt(2); 
-
+        int slot = getSlot(alcMixerId);
         String drinkName = getAlcMixerDrinkName(alcMixerId); 
-        AlcMixer alc = new AlcMixer(drinkName, percentage);
+        AlcMixer alc = new AlcMixer(drinkName, percentage, slot);
         tmp.add(alc);
       }   
 
@@ -84,6 +84,20 @@ public class SQLManager{
     } catch(Exception e){
       System.out.println(e);
       return null;
+    }
+  }
+
+  public int getSlot(int drinkId){
+    try{
+      Connection con = DriverManager.getConnection(connectionString, username, password); 
+      Statement stmt = con.createStatement(); 
+      ResultSet rs = stmt.executeQuery("SELECT slot FROM slots WHERE id = " + drinkId);
+      
+      rs.next(); 
+      return rs.getInt(1);
+    } catch (Exception e){
+      System.out.println(e); 
+      return 0;
     }
   }
 

@@ -95,11 +95,15 @@ public class GPIO {
       
 
     */
-    makeDrink(2, 5);
-    makeDrink(3, 7);
    }  
-  public void makeDrink(int index, int index1){
+  public void makeDrink(AlcMixer[] am){
     try{
+      for(int i = 0; i < am.length; i++){
+        GpioArray[am[i].getSlot()].high(); 
+        Thread.sleep(1000*am[i].getPercentage());
+        GpioArray[am[i].getSlot()].low();
+      }
+      /*
       for(int i = 0; i < 15; i++){
         GpioArray[i].high();
         if(i == index || i == index1){
@@ -107,6 +111,7 @@ public class GPIO {
         }
         GpioArray[i].low();
       }
+      */
     } catch (InterruptedException error){
       System.out.println("Error");
     }
