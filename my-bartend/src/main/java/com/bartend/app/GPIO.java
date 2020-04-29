@@ -95,15 +95,15 @@ public class GPIO {
       
 
     */
-    makeDrink(2, 1000);
-    makeDrink(3, 1000);
+    makeDrink(2, 5);
+    makeDrink(3, 7);
    }  
-  public void makeDrink(int index, int time){
+  public void makeDrink(int index, int index1){
     try{
       for(int i = 0; i < 15; i++){
         GpioArray[i].high();
-        if(i == index){
-          Thread.sleep(time);
+        if(i == index || i == index1){
+          Thread.sleep(1000);
         }
         GpioArray[i].low();
       }
