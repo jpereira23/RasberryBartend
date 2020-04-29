@@ -55,21 +55,21 @@ public class GPIO {
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
      pump1.setShutdownOptions(true, PinState.HIGH);
-     pump2.setShutdownOptions(true, PinState.LOW);
-     pump3.setShutdownOptions(true, PinState.LOW);
-     pump4.setShutdownOptions(true, PinState.LOW);
-     pump5.setShutdownOptions(true, PinState.LOW);
-     pump6.setShutdownOptions(true, PinState.LOW);
-     pump7.setShutdownOptions(true, PinState.LOW);
-     pump8.setShutdownOptions(true, PinState.LOW);
-     pump9.setShutdownOptions(true, PinState.LOW);
-     pump10.setShutdownOptions(true, PinState.LOW);
-     pump11.setShutdownOptions(true, PinState.LOW);
-     pump12.setShutdownOptions(true, PinState.LOW);
-     pump13.setShutdownOptions(true, PinState.LOW);
-     pump14.setShutdownOptions(true, PinState.LOW);
-     pump15.setShutdownOptions(true, PinState.LOW);
-     pump16.setShutdownOptions(true, PinState.LOW);
+     pump2.setShutdownOptions(true, PinState.HIGH);
+     pump3.setShutdownOptions(true, PinState.HIGH);
+     pump4.setShutdownOptions(true, PinState.HIGH);
+     pump5.setShutdownOptions(true, PinState.HIGH);
+     pump6.setShutdownOptions(true, PinState.HIGH);
+     pump7.setShutdownOptions(true, PinState.HIGH);
+     pump8.setShutdownOptions(true, PinState.HIGH);
+     pump9.setShutdownOptions(true, PinState.HIGH);
+     pump10.setShutdownOptions(true, PinState.HIGH);
+     pump11.setShutdownOptions(true, PinState.HIGH);
+     pump12.setShutdownOptions(true, PinState.HIGH);
+     pump13.setShutdownOptions(true, PinState.HIGH);
+     pump14.setShutdownOptions(true, PinState.HIGH);
+     pump15.setShutdownOptions(true, PinState.HIGH);
+     pump16.setShutdownOptions(true, PinState.HIGH);
      /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
@@ -99,9 +99,9 @@ public class GPIO {
   public void makeDrink(AlcMixer[] am){
     try{
       for(int i = 0; i < am.length; i++){
-        GpioArray[am[i].getSlot()].high(); 
-        Thread.sleep(1000*am[i].getPercentage());
-        GpioArray[am[i].getSlot()].low();
+        GpioArray[am[i].getSlot()].low(); 
+        Thread.sleep(100*am[i].getPercentage());
+        GpioArray[am[i].getSlot()].high();
       }
       /*
       for(int i = 0; i < 15; i++){
