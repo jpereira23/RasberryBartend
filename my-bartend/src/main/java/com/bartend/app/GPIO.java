@@ -54,22 +54,22 @@ public class GPIO {
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
-     pump1.setShutdownOptions(true, PinState.LOW);
-     pump2.setShutdownOptions(true, PinState.LOW);
-     pump3.setShutdownOptions(true, PinState.LOW);
-     pump4.setShutdownOptions(true, PinState.LOW);
-     pump5.setShutdownOptions(true, PinState.LOW);
-     pump6.setShutdownOptions(true, PinState.LOW);
-     pump7.setShutdownOptions(true, PinState.LOW);
-     pump8.setShutdownOptions(true, PinState.LOW);
-     pump9.setShutdownOptions(true, PinState.LOW);
-     pump10.setShutdownOptions(true, PinState.LOW);
-     pump11.setShutdownOptions(true, PinState.LOW);
-     pump12.setShutdownOptions(true, PinState.LOW);
-     pump13.setShutdownOptions(true, PinState.LOW);
-     pump14.setShutdownOptions(true, PinState.LOW);
-     pump15.setShutdownOptions(true, PinState.LOW);
-     pump16.setShutdownOptions(true, PinState.LOW);
+     pump1.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump2.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump3.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump4.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump5.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump6.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump7.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump8.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump9.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump10.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump11.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump12.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump13.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump14.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump15.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+     pump16.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
       /*
      for(int i = 0; i < 16; i++){
        GpioArray[i].low();
