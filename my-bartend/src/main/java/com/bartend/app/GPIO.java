@@ -35,22 +35,22 @@ public class GPIO {
 
    public GPIO(){
      gpio = GpioFactory.getInstance();
-     pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, PinState.LOW);
-     pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, PinState.LOW);
-     pump3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, PinState.LOW);
-     pump4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, PinState.LOW);
-     pump5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, PinState.LOW);
-     pump6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, PinState.LOW);
-     pump7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, PinState.LOW);
-     pump8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, PinState.LOW);
-     pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31, PinState.LOW);
-     pump10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, PinState.LOW);
-     pump11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, PinState.LOW);
-     pump12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, PinState.LOW);
-     pump13 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, PinState.LOW);
-     pump14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08, PinState.LOW);
-     pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, PinState.LOW);
-     pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, PinState.LOW);
+     pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15);
+     pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16);
+     pump3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+     pump4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
+     pump5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05);
+     pump6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06);
+     pump7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10);
+     pump8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11);
+     pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31);
+     pump10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26);
+     pump11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27);
+     pump12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28);
+     pump13 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
+     pump14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08);
+     pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09);
+     pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07);
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
