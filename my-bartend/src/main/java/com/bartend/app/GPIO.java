@@ -35,45 +35,46 @@ public class GPIO {
 
    public GPIO(){
      gpio = GpioFactory.getInstance();
-     pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "My Led", PinState.HIGH);
-     pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "My Led", PinState.HIGH);
-     pump3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "My Led", PinState.HIGH);
-     pump4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "My Led", PinState.HIGH);
-     pump5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "My Led", PinState.HIGH);
-     pump6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "My Led", PinState.HIGH);
-     pump7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "My Led", PinState.HIGH);
-     pump8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "My Led", PinState.HIGH);
-     pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31, "My Led", PinState.HIGH);
-     pump10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "My Led", PinState.HIGH);
-     pump11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "My Led", PinState.HIGH);
-     pump12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "My Led", PinState.HIGH);
-     pump13 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "My Led", PinState.HIGH);
-     pump14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08, "My Led", PinState.HIGH);
-     pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, "My Led", PinState.HIGH);
-     pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "My Led", PinState.HIGH);
+     pump1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "My Led", PinState.LOW);
+     pump2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_16, "My Led", PinState.LOW);
+     pump3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "My Led", PinState.LOW);
+     pump4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "My Led", PinState.LOW);
+     pump5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "My Led", PinState.LOW);
+     pump6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "My Led", PinState.LOW);
+     pump7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_10, "My Led", PinState.LOW);
+     pump8 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_11, "My Led", PinState.LOW);
+     pump9 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_31, "My Led", PinState.LOW);
+     pump10 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_26, "My Led", PinState.LOW);
+     pump11 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_27, "My Led", PinState.LOW);
+     pump12 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_28, "My Led", PinState.LOW);
+     pump13 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29, "My Led", PinState.LOW);
+     pump14 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_08, "My Led", PinState.LOW);
+     pump15 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_09, "My Led", PinState.LOW);
+     pump16 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, "My Led", PinState.LOW);
      irSensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
      GpioArray = new GpioPinDigitalOutput[]{pump1, pump2, pump3, pump4, pump5, pump6, pump7, pump8, pump9, pump10, pump11, pump12, pump13, pump14, pump15};
-     pump1.setShutdownOptions(true, PinState.HIGH);
-     pump2.setShutdownOptions(true, PinState.HIGH);
-     pump3.setShutdownOptions(true, PinState.HIGH);
-     pump4.setShutdownOptions(true, PinState.HIGH);
-     pump5.setShutdownOptions(true, PinState.HIGH);
-     pump6.setShutdownOptions(true, PinState.HIGH);
-     pump7.setShutdownOptions(true, PinState.HIGH);
-     pump8.setShutdownOptions(true, PinState.HIGH);
-     pump9.setShutdownOptions(true, PinState.HIGH);
-     pump10.setShutdownOptions(true, PinState.HIGH);
-     pump11.setShutdownOptions(true, PinState.HIGH);
-     pump12.setShutdownOptions(true, PinState.HIGH);
-     pump13.setShutdownOptions(true, PinState.HIGH);
-     pump14.setShutdownOptions(true, PinState.HIGH);
-     pump15.setShutdownOptions(true, PinState.HIGH);
-     pump16.setShutdownOptions(true, PinState.HIGH);
-
+     pump1.setShutdownOptions(true, PinState.LOW);
+     pump2.setShutdownOptions(true, PinState.LOW);
+     pump3.setShutdownOptions(true, PinState.LOW);
+     pump4.setShutdownOptions(true, PinState.LOW);
+     pump5.setShutdownOptions(true, PinState.LOW);
+     pump6.setShutdownOptions(true, PinState.LOW);
+     pump7.setShutdownOptions(true, PinState.LOW);
+     pump8.setShutdownOptions(true, PinState.LOW);
+     pump9.setShutdownOptions(true, PinState.LOW);
+     pump10.setShutdownOptions(true, PinState.LOW);
+     pump11.setShutdownOptions(true, PinState.LOW);
+     pump12.setShutdownOptions(true, PinState.LOW);
+     pump13.setShutdownOptions(true, PinState.LOW);
+     pump14.setShutdownOptions(true, PinState.LOW);
+     pump15.setShutdownOptions(true, PinState.LOW);
+     pump16.setShutdownOptions(true, PinState.LOW);
+      /*
      for(int i = 0; i < 16; i++){
        GpioArray[i].low();
      }
+    */
     /*
      irSensor.addListener(new GpioPinListenerDigital() {
             @Override
