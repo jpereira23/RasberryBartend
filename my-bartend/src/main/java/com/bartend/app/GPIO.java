@@ -70,8 +70,8 @@ public class GPIO {
      pump14.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
      pump15.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
      pump16.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-      pump16.setState(PinState.LOW); 
-      pump14.setState(PinState.LOW);
+      pump16.setState(PinState.HIGH); 
+      pump14.setState(PinState.HIGH);
       /*
      for(int i = 0; i < 16; i++){
        GpioArray[i].low();
